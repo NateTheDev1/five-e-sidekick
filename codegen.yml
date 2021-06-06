@@ -1,0 +1,37 @@
+overwrite: true
+schema: ./generated-schema.graphql
+watch: true
+generates:
+    ./@types/resolvers.d.ts:
+        plugins:
+            - add:
+                  placement: 'prepend'
+                  content: 'declare global { namespace Resolvers {'
+            - 'typescript'
+            - 'typescript-resolvers'
+            - 'typescript-document-nodes'
+            - add:
+                  placement: 'append'
+                  content: '} } export {};'
+        config:
+            declarationKind: 'interface'
+            maybeValue: 'T | undefined'
+            enumsAsTypes: true
+            noExport: true
+    ./@types/schema.d.ts:
+        plugins:
+            - add:
+                  placement: 'prepend'
+                  content: 'declare global { namespace Schema {'
+            - typescript
+            - add:
+                  placement: 'append'
+                  content: '} } export {};'
+        config:
+            declarationKind: 'interface'
+            maybeValue: 'T | undefined'
+            enumsAsTypes: true
+            noExport: true
+    ./graphql.schema.json:
+        plugins:
+            - 'introspection'

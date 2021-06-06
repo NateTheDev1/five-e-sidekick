@@ -1,0 +1,16 @@
+{
+	"name": "five-e-server",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"dev": " nodemon src/index.ts ",
+		"generate-types": "graphql-codegen --config codegen.yml",
+		"build": "tsc && cp -R src/schema/schemaFiles dist/schema",
+		"start": "NODE_ENV=production node dist/index.js",
+		"typecheck": "tsc -p . --noEmit true",
+		"schema": "ts-node scripts/generate-schema.ts && npm run generate-types"
+	},
+	"author": "",
+	"license": "ISC"
+}
