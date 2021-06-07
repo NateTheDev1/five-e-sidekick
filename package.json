@@ -12,5 +12,39 @@
 		"schema": "ts-node scripts/generate-schema.ts && npm run generate-types"
 	},
 	"author": "",
-	"license": "ISC"
+	"license": "ISC",
+	"dependencies": {
+		"apollo-server": "^2.25.0",
+		"apollo-server-express": "^2.25.0",
+		"bcryptjs": "^2.4.3",
+		"cors": "^2.8.5",
+		"debug-sx": "^0.3.0",
+		"dotenv": "^10.0.0",
+		"express": "^4.17.1",
+		"graphql": "^15.5.0",
+		"graphql-tools": "7.0.5",
+		"jsonwebtoken": "^8.5.1",
+		"knex": "^0.95.6",
+		"morgan": "^1.10.0",
+		"objection": "^2.2.15",
+		"typescript": "^4.3.2"
+	},
+	"devDependencies": {
+		"@graphql-codegen/add": "^2.0.2",
+		"@graphql-codegen/cli": "^1.21.5",
+		"@graphql-codegen/introspection": "^1.18.2",
+		"@graphql-codegen/typescript": "^1.22.1",
+		"@graphql-codegen/typescript-document-nodes": "^1.17.12",
+		"@graphql-codegen/typescript-resolvers": "^1.19.2",
+		"@types/bcryptjs": "^2.4.2",
+		"@types/dotenv": "^8.2.0",
+		"@types/express": "^4.17.12",
+		"@types/graphql": "^14.5.0",
+		"@types/jsonwebtoken": "^8.5.1",
+		"@types/morgan": "^1.9.2",
+		"@types/node": "^15.12.1",
+		"concurrently": "^6.2.0",
+		"nodemon": "^2.0.7",
+		"ts-node": "^10.0.0"
+	}
 }

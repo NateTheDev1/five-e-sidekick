@@ -1,0 +1,27 @@
+type Query {
+	getUser(id: Int!): User!
+}
+
+type Mutation {
+	signup(user: SignupInput!): User!
+	login(credentials: LoginInput!): User!
+}
+
+input LoginInput {
+	email: String!
+	password: String!
+}
+
+input SignupInput {
+	name: String!
+	email: String!
+	password: String!
+}
+
+type User {
+	id: Int!
+	name: String!
+	email: String!
+	token: String
+	createdAt: String!
+}
