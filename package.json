@@ -27,6 +27,7 @@
 		"knex": "^0.95.6",
 		"morgan": "^1.10.0",
 		"objection": "^2.2.15",
+		"pg": "^8.6.0",
 		"typescript": "^4.3.2"
 	},
 	"devDependencies": {
