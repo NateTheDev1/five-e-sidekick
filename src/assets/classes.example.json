@@ -1,0 +1,22 @@
+{
+	"name": "",
+	"hitDice": { "number": 1, "faces": 8 },
+	"proficiencies": [{ "name": "" }],
+	"startingProficiencies": {
+		"armor": [],
+		"weapons": [],
+		"tools": [],
+		"skills": {
+			"choose": true,
+			"from": []
+		}
+	},
+	"startingEquipment": {
+		"or_gold": [
+			{ "number": 5, "faces": 4 },
+			{ "number": 1, "faces": 8 }
+		],
+		"default": [{ "id": 1, "desc": "", "quantity": 1 }]
+	},
+	"classFeatures": []
+}
