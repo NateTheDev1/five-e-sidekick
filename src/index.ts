@@ -41,7 +41,7 @@ const app = express();
 
 initializeMiddleware(app);
 
-server.applyMiddleware({ app });
+server.applyMiddleware({ app: app as any });
 
 const httpServer = createServer(app);
 server.installSubscriptionHandlers(httpServer);
