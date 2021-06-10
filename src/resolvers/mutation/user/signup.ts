@@ -1,5 +1,8 @@
 import User from '../../../db/models/User';
-import { signJWT } from '../../../services/AuthenticationService';
+import {
+	AuthenticationService,
+	signJWT
+} from '../../../services/AuthenticationService';
 
 export const signup: Resolvers.MutationResolvers['signup'] = async (
 	parent,
@@ -18,7 +21,9 @@ export const signup: Resolvers.MutationResolvers['signup'] = async (
 
 	const user = await User.query().insertAndFetch({
 		email: args.user.email,
-		password: args.user.password,
+		password: await new AuthenticationService(
+			args.user.password
+		).hashPassword(),
 		name: args.user.name,
 		createdAt: new Date().toString()
 	});
