@@ -8,8 +8,8 @@ pg.defaults.ssl = true;
 const config = {
 	development: {
 		client: 'pg',
-		connection: process.env.DB_URL
+		connection: process.env.DB_URL,
+		ssl: { rejectUnauthorized: false }
 	}
 };
-
 export default config;
