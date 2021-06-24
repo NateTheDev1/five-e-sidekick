@@ -1,6 +1,23 @@
 type Query {
   getSoundboards: [Soundboard]!
+  getSoundboard(soundboardId: Int!): Soundboard!
   getUser(id: Int!): User!
+}
+
+type Mutation {
+  createSoundboard(title: String!): Soundboard!
+  deleteSoundboard(soundboardId: Int!): Boolean!
+  deleteSoundboardLink(linkId: Int!): Boolean!
+  addSoundboardLink(link: SoundboardLinkInput!): Boolean!
+  signup(user: SignupInput!): User!
+  login(credentials: LoginInput!): User!
+  appleLogin(email: String!): User!
+}
+
+input SoundboardLinkInput {
+  title: String!
+  url: String!
+  soundboardId: Int!
 }
 
 type SoundboardLink {
@@ -15,12 +32,6 @@ type Soundboard {
   title: String!
   userId: Int!
   links: [SoundboardLink]!
-}
-
-type Mutation {
-  signup(user: SignupInput!): User!
-  login(credentials: LoginInput!): User!
-  appleLogin(email: String!): User!
 }
 
 input LoginInput {

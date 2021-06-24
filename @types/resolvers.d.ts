@@ -22,9 +22,33 @@ interface LoginInput {
 
 interface Mutation {
   __typename?: 'Mutation';
+  createSoundboard: Soundboard;
+  deleteSoundboard: Scalars['Boolean'];
+  deleteSoundboardLink: Scalars['Boolean'];
+  addSoundboardLink: Scalars['Boolean'];
   signup: User;
   login: User;
   appleLogin: User;
+}
+
+
+interface MutationCreateSoundboardArgs {
+  title: Scalars['String'];
+}
+
+
+interface MutationDeleteSoundboardArgs {
+  soundboardId: Scalars['Int'];
+}
+
+
+interface MutationDeleteSoundboardLinkArgs {
+  linkId: Scalars['Int'];
+}
+
+
+interface MutationAddSoundboardLinkArgs {
+  link: SoundboardLinkInput;
 }
 
 
@@ -45,7 +69,13 @@ interface MutationAppleLoginArgs {
 interface Query {
   __typename?: 'Query';
   getSoundboards: Array<Maybe<Soundboard>>;
+  getSoundboard: Soundboard;
   getUser: User;
+}
+
+
+interface QueryGetSoundboardArgs {
+  soundboardId: Scalars['Int'];
 }
 
 
@@ -70,6 +100,12 @@ interface Soundboard {
 interface SoundboardLink {
   __typename?: 'SoundboardLink';
   id: Scalars['Int'];
+  title: Scalars['String'];
+  url: Scalars['String'];
+  soundboardId: Scalars['Int'];
+}
+
+interface SoundboardLinkInput {
   title: Scalars['String'];
   url: Scalars['String'];
   soundboardId: Scalars['Int'];
@@ -165,13 +201,14 @@ export type ResolversTypes = {
   LoginInput: LoginInput;
   String: ResolverTypeWrapper<Scalars['String']>;
   Mutation: ResolverTypeWrapper<{}>;
-  Query: ResolverTypeWrapper<{}>;
+  Boolean: ResolverTypeWrapper<Scalars['Boolean']>;
   Int: ResolverTypeWrapper<Scalars['Int']>;
+  Query: ResolverTypeWrapper<{}>;
   SignupInput: SignupInput;
   Soundboard: ResolverTypeWrapper<Soundboard>;
   SoundboardLink: ResolverTypeWrapper<SoundboardLink>;
+  SoundboardLinkInput: SoundboardLinkInput;
   User: ResolverTypeWrapper<User>;
-  Boolean: ResolverTypeWrapper<Scalars['Boolean']>;
 };
 
 /** Mapping between all available schema types and the resolvers parents */
@@ -179,16 +216,21 @@ export type ResolversParentTypes = {
   LoginInput: LoginInput;
   String: Scalars['String'];
   Mutation: {};
-  Query: {};
+  Boolean: Scalars['Boolean'];
   Int: Scalars['Int'];
+  Query: {};
   SignupInput: SignupInput;
   Soundboard: Soundboard;
   SoundboardLink: SoundboardLink;
+  SoundboardLinkInput: SoundboardLinkInput;
   User: User;
-  Boolean: Scalars['Boolean'];
 };
 
 export type MutationResolvers<ContextType = any, ParentType extends ResolversParentTypes['Mutation'] = ResolversParentTypes['Mutation']> = {
+  createSoundboard?: Resolver<ResolversTypes['Soundboard'], ParentType, ContextType, RequireFields<MutationCreateSoundboardArgs, 'title'>>;
+  deleteSoundboard?: Resolver<ResolversTypes['Boolean'], ParentType, ContextType, RequireFields<MutationDeleteSoundboardArgs, 'soundboardId'>>;
+  deleteSoundboardLink?: Resolver<ResolversTypes['Boolean'], ParentType, ContextType, RequireFields<MutationDeleteSoundboardLinkArgs, 'linkId'>>;
+  addSoundboardLink?: Resolver<ResolversTypes['Boolean'], ParentType, ContextType, RequireFields<MutationAddSoundboardLinkArgs, 'link'>>;
   signup?: Resolver<ResolversTypes['User'], ParentType, ContextType, RequireFields<MutationSignupArgs, 'user'>>;
   login?: Resolver<ResolversTypes['User'], ParentType, ContextType, RequireFields<MutationLoginArgs, 'credentials'>>;
   appleLogin?: Resolver<ResolversTypes['User'], ParentType, ContextType, RequireFields<MutationAppleLoginArgs, 'email'>>;
@@ -196,6 +238,7 @@ export type MutationResolvers<ContextType = any, ParentType extends ResolversPar
 
 export type QueryResolvers<ContextType = any, ParentType extends ResolversParentTypes['Query'] = ResolversParentTypes['Query']> = {
   getSoundboards?: Resolver<Array<Maybe<ResolversTypes['Soundboard']>>, ParentType, ContextType>;
+  getSoundboard?: Resolver<ResolversTypes['Soundboard'], ParentType, ContextType, RequireFields<QueryGetSoundboardArgs, 'soundboardId'>>;
   getUser?: Resolver<ResolversTypes['User'], ParentType, ContextType, RequireFields<QueryGetUserArgs, 'id'>>;
 };
 

@@ -19,9 +19,33 @@ interface LoginInput {
 
 interface Mutation {
   __typename?: 'Mutation';
+  createSoundboard: Soundboard;
+  deleteSoundboard: Scalars['Boolean'];
+  deleteSoundboardLink: Scalars['Boolean'];
+  addSoundboardLink: Scalars['Boolean'];
   signup: User;
   login: User;
   appleLogin: User;
+}
+
+
+interface MutationCreateSoundboardArgs {
+  title: Scalars['String'];
+}
+
+
+interface MutationDeleteSoundboardArgs {
+  soundboardId: Scalars['Int'];
+}
+
+
+interface MutationDeleteSoundboardLinkArgs {
+  linkId: Scalars['Int'];
+}
+
+
+interface MutationAddSoundboardLinkArgs {
+  link: SoundboardLinkInput;
 }
 
 
@@ -42,7 +66,13 @@ interface MutationAppleLoginArgs {
 interface Query {
   __typename?: 'Query';
   getSoundboards: Array<Maybe<Soundboard>>;
+  getSoundboard: Soundboard;
   getUser: User;
+}
+
+
+interface QueryGetSoundboardArgs {
+  soundboardId: Scalars['Int'];
 }
 
 
@@ -67,6 +97,12 @@ interface Soundboard {
 interface SoundboardLink {
   __typename?: 'SoundboardLink';
   id: Scalars['Int'];
+  title: Scalars['String'];
+  url: Scalars['String'];
+  soundboardId: Scalars['Int'];
+}
+
+interface SoundboardLinkInput {
   title: Scalars['String'];
   url: Scalars['String'];
   soundboardId: Scalars['Int'];
