@@ -1,5 +1,5 @@
 type Query {
-	getSoundboards(userId: Int!): [Soundboard]!
+	getSoundboards: [Soundboard]!
 }
 
 type SoundboardLink {

@@ -1,5 +1,5 @@
 type Query {
-  getSoundboards(userId: Int!): [Soundboard]!
+  getSoundboards: [Soundboard]!
   getUser(id: Int!): User!
 }
 
@@ -20,6 +20,7 @@ type Soundboard {
 type Mutation {
   signup(user: SignupInput!): User!
   login(credentials: LoginInput!): User!
+  appleLogin(email: String!): User!
 }
 
 input LoginInput {

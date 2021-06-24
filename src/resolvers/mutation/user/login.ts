@@ -5,6 +5,47 @@ import {
 	signJWT
 } from '../../../services/AuthenticationService';
 
+export const appleLogin: Resolvers.MutationResolvers['appleLogin'] = async (
+	parent,
+	args,
+	context: Services.ServerContext
+) => {
+	context.logger.info('Resolvers: Mutation: appleLogin');
+
+	if (context.authenticated) {
+		throw new AuthenticationError('Already logged in');
+	}
+
+	const existing = await User.query().where({ email: args.email }).first();
+
+	if (!existing) {
+		const created = await User.query().insertAndFetch({
+			email: args.email,
+			password: 'apple_managed',
+			name: args.email,
+			createdAt: new Date().toString()
+		});
+
+		context.session = {
+			userId: created.id,
+			username: created.email
+		};
+
+		const token = await signJWT(context);
+
+		return { ...created, token: token };
+	} else {
+		context.session = {
+			userId: existing.id,
+			username: existing.email
+		};
+
+		const token = await signJWT(context);
+
+		return { ...existing, token: token };
+	}
+};
+
 export const login: Resolvers.MutationResolvers['login'] = async (
 	parent,
 	args,

@@ -21,6 +21,7 @@ interface Mutation {
   __typename?: 'Mutation';
   signup: User;
   login: User;
+  appleLogin: User;
 }
 
 
@@ -33,15 +34,15 @@ interface MutationLoginArgs {
   credentials: LoginInput;
 }
 
+
+interface MutationAppleLoginArgs {
+  email: Scalars['String'];
+}
+
 interface Query {
   __typename?: 'Query';
   getSoundboards: Array<Maybe<Soundboard>>;
   getUser: User;
-}
-
-
-interface QueryGetSoundboardsArgs {
-  userId: Scalars['Int'];
 }
 
 

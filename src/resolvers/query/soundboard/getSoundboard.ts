@@ -6,7 +6,7 @@ export const getSoundboards: Resolvers.QueryResolvers['getSoundboards'] =
 		context.logger.info('Resolvers: Query: getSoundboard');
 
 		const soundboards = await Soundboard.query().where({
-			userId: args.userId
+			userId: context.session?.userId
 		});
 
 		if (!soundboards) {

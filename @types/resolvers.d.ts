@@ -24,6 +24,7 @@ interface Mutation {
   __typename?: 'Mutation';
   signup: User;
   login: User;
+  appleLogin: User;
 }
 
 
@@ -36,15 +37,15 @@ interface MutationLoginArgs {
   credentials: LoginInput;
 }
 
+
+interface MutationAppleLoginArgs {
+  email: Scalars['String'];
+}
+
 interface Query {
   __typename?: 'Query';
   getSoundboards: Array<Maybe<Soundboard>>;
   getUser: User;
-}
-
-
-interface QueryGetSoundboardsArgs {
-  userId: Scalars['Int'];
 }
 
 
@@ -190,10 +191,11 @@ export type ResolversParentTypes = {
 export type MutationResolvers<ContextType = any, ParentType extends ResolversParentTypes['Mutation'] = ResolversParentTypes['Mutation']> = {
   signup?: Resolver<ResolversTypes['User'], ParentType, ContextType, RequireFields<MutationSignupArgs, 'user'>>;
   login?: Resolver<ResolversTypes['User'], ParentType, ContextType, RequireFields<MutationLoginArgs, 'credentials'>>;
+  appleLogin?: Resolver<ResolversTypes['User'], ParentType, ContextType, RequireFields<MutationAppleLoginArgs, 'email'>>;
 };
 
 export type QueryResolvers<ContextType = any, ParentType extends ResolversParentTypes['Query'] = ResolversParentTypes['Query']> = {
-  getSoundboards?: Resolver<Array<Maybe<ResolversTypes['Soundboard']>>, ParentType, ContextType, RequireFields<QueryGetSoundboardsArgs, 'userId'>>;
+  getSoundboards?: Resolver<Array<Maybe<ResolversTypes['Soundboard']>>, ParentType, ContextType>;
   getUser?: Resolver<ResolversTypes['User'], ParentType, ContextType, RequireFields<QueryGetUserArgs, 'id'>>;
 };
 

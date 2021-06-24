@@ -1,4 +1,4 @@
-import { login } from './mutation/user/login';
+import { appleLogin, login } from './mutation/user/login';
 import { signup } from './mutation/user/signup';
 import {
 	getSoundboards,
@@ -14,6 +14,7 @@ export const resolvers: Resolvers.Resolvers = {
 	Soundboard: SoundboardResolvers,
 	Mutation: <Resolvers.MutationResolvers>{
 		login: login,
-		signup: signup
+		signup: signup,
+		appleLogin: appleLogin
 	}
 };
