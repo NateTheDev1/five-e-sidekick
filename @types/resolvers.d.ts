@@ -38,7 +38,13 @@ interface MutationLoginArgs {
 
 interface Query {
   __typename?: 'Query';
+  getSoundboards: Array<Maybe<Soundboard>>;
   getUser: User;
+}
+
+
+interface QueryGetSoundboardsArgs {
+  userId: Scalars['Int'];
 }
 
 
@@ -50,6 +56,22 @@ interface SignupInput {
   name: Scalars['String'];
   email: Scalars['String'];
   password: Scalars['String'];
+}
+
+interface Soundboard {
+  __typename?: 'Soundboard';
+  id: Scalars['Int'];
+  title: Scalars['String'];
+  userId: Scalars['Int'];
+  links: Array<Maybe<SoundboardLink>>;
+}
+
+interface SoundboardLink {
+  __typename?: 'SoundboardLink';
+  id: Scalars['Int'];
+  title: Scalars['String'];
+  url: Scalars['String'];
+  soundboardId: Scalars['Int'];
 }
 
 interface User {
@@ -145,6 +167,8 @@ export type ResolversTypes = {
   Query: ResolverTypeWrapper<{}>;
   Int: ResolverTypeWrapper<Scalars['Int']>;
   SignupInput: SignupInput;
+  Soundboard: ResolverTypeWrapper<Soundboard>;
+  SoundboardLink: ResolverTypeWrapper<SoundboardLink>;
   User: ResolverTypeWrapper<User>;
   Boolean: ResolverTypeWrapper<Scalars['Boolean']>;
 };
@@ -157,6 +181,8 @@ export type ResolversParentTypes = {
   Query: {};
   Int: Scalars['Int'];
   SignupInput: SignupInput;
+  Soundboard: Soundboard;
+  SoundboardLink: SoundboardLink;
   User: User;
   Boolean: Scalars['Boolean'];
 };
@@ -167,7 +193,24 @@ export type MutationResolvers<ContextType = any, ParentType extends ResolversPar
 };
 
 export type QueryResolvers<ContextType = any, ParentType extends ResolversParentTypes['Query'] = ResolversParentTypes['Query']> = {
+  getSoundboards?: Resolver<Array<Maybe<ResolversTypes['Soundboard']>>, ParentType, ContextType, RequireFields<QueryGetSoundboardsArgs, 'userId'>>;
   getUser?: Resolver<ResolversTypes['User'], ParentType, ContextType, RequireFields<QueryGetUserArgs, 'id'>>;
+};
+
+export type SoundboardResolvers<ContextType = any, ParentType extends ResolversParentTypes['Soundboard'] = ResolversParentTypes['Soundboard']> = {
+  id?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
+  title?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  userId?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
+  links?: Resolver<Array<Maybe<ResolversTypes['SoundboardLink']>>, ParentType, ContextType>;
+  __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
+};
+
+export type SoundboardLinkResolvers<ContextType = any, ParentType extends ResolversParentTypes['SoundboardLink'] = ResolversParentTypes['SoundboardLink']> = {
+  id?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
+  title?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  url?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  soundboardId?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
+  __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
 export type UserResolvers<ContextType = any, ParentType extends ResolversParentTypes['User'] = ResolversParentTypes['User']> = {
@@ -182,6 +225,8 @@ export type UserResolvers<ContextType = any, ParentType extends ResolversParentT
 export type Resolvers<ContextType = any> = {
   Mutation?: MutationResolvers<ContextType>;
   Query?: QueryResolvers<ContextType>;
+  Soundboard?: SoundboardResolvers<ContextType>;
+  SoundboardLink?: SoundboardLinkResolvers<ContextType>;
   User?: UserResolvers<ContextType>;
 };
 

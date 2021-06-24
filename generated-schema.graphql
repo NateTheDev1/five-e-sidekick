@@ -1,5 +1,20 @@
 type Query {
+  getSoundboards(userId: Int!): [Soundboard]!
   getUser(id: Int!): User!
+}
+
+type SoundboardLink {
+  id: Int!
+  title: String!
+  url: String!
+  soundboardId: Int!
+}
+
+type Soundboard {
+  id: Int!
+  title: String!
+  userId: Int!
+  links: [SoundboardLink]!
 }
 
 type Mutation {

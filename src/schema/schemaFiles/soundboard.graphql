@@ -1,0 +1,17 @@
+type Query {
+	getSoundboards(userId: Int!): [Soundboard]!
+}
+
+type SoundboardLink {
+	id: Int!
+	title: String!
+	url: String!
+	soundboardId: Int!
+}
+
+type Soundboard {
+	id: Int!
+	title: String!
+	userId: Int!
+	links: [SoundboardLink]!
+}

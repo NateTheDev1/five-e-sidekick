@@ -35,7 +35,13 @@ interface MutationLoginArgs {
 
 interface Query {
   __typename?: 'Query';
+  getSoundboards: Array<Maybe<Soundboard>>;
   getUser: User;
+}
+
+
+interface QueryGetSoundboardsArgs {
+  userId: Scalars['Int'];
 }
 
 
@@ -47,6 +53,22 @@ interface SignupInput {
   name: Scalars['String'];
   email: Scalars['String'];
   password: Scalars['String'];
+}
+
+interface Soundboard {
+  __typename?: 'Soundboard';
+  id: Scalars['Int'];
+  title: Scalars['String'];
+  userId: Scalars['Int'];
+  links: Array<Maybe<SoundboardLink>>;
+}
+
+interface SoundboardLink {
+  __typename?: 'SoundboardLink';
+  id: Scalars['Int'];
+  title: Scalars['String'];
+  url: Scalars['String'];
+  soundboardId: Scalars['Int'];
 }
 
 interface User {
