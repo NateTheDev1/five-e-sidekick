@@ -7,7 +7,9 @@ export const waitListSignup: Resolvers.MutationResolvers['waitListSignup'] =
 
 		sgMail.setApiKey(process.env.SENDGRID_API_KEY as string);
 
-		const existing = await User.query().where({ email: args.email });
+		const existing = await User.query()
+			.where({ email: args.email })
+			.first();
 
 		if (existing) {
 			throw new Error('Already signed up!');
