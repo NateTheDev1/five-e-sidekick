@@ -1,10 +1,17 @@
 import sgMail from '@sendgrid/mail';
+import User from '../../../db/models/User';
 
 export const waitListSignup: Resolvers.MutationResolvers['waitListSignup'] =
 	async (parent, args, context: Services.ServerContext) => {
 		context.logger.info('Waitlist signup:', args.email);
 
 		sgMail.setApiKey(process.env.SENDGRID_API_KEY as string);
+
+		const existing = await User.query().where({ email: args.email });
+
+		if (existing) {
+			throw new Error('Already signed up!');
+		}
 
 		await sgMail.send({
 			to: [args.email],
@@ -16,6 +23,13 @@ export const waitListSignup: Resolvers.MutationResolvers['waitListSignup'] =
 					to: [{ email: args.email }]
 				}
 			]
+		});
+
+		await User.query().insertAndFetch({
+			email: args.email,
+			password: 'waitlisted',
+			name: 'Unknown',
+			createdAt: new Date().toString()
 		});
 
 		return true;
