@@ -26,6 +26,7 @@ interface Mutation {
   signup: User;
   login: User;
   appleLogin: User;
+  waitListSignup: Scalars['Boolean'];
 }
 
 
@@ -60,6 +61,11 @@ interface MutationLoginArgs {
 
 
 interface MutationAppleLoginArgs {
+  email: Scalars['String'];
+}
+
+
+interface MutationWaitListSignupArgs {
   email: Scalars['String'];
 }
 

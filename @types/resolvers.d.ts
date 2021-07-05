@@ -29,6 +29,7 @@ interface Mutation {
   signup: User;
   login: User;
   appleLogin: User;
+  waitListSignup: Scalars['Boolean'];
 }
 
 
@@ -63,6 +64,11 @@ interface MutationLoginArgs {
 
 
 interface MutationAppleLoginArgs {
+  email: Scalars['String'];
+}
+
+
+interface MutationWaitListSignupArgs {
   email: Scalars['String'];
 }
 
@@ -234,6 +240,7 @@ export type MutationResolvers<ContextType = any, ParentType extends ResolversPar
   signup?: Resolver<ResolversTypes['User'], ParentType, ContextType, RequireFields<MutationSignupArgs, 'user'>>;
   login?: Resolver<ResolversTypes['User'], ParentType, ContextType, RequireFields<MutationLoginArgs, 'credentials'>>;
   appleLogin?: Resolver<ResolversTypes['User'], ParentType, ContextType, RequireFields<MutationAppleLoginArgs, 'email'>>;
+  waitListSignup?: Resolver<ResolversTypes['Boolean'], ParentType, ContextType, RequireFields<MutationWaitListSignupArgs, 'email'>>;
 };
 
 export type QueryResolvers<ContextType = any, ParentType extends ResolversParentTypes['Query'] = ResolversParentTypes['Query']> = {

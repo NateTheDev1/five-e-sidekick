@@ -12,6 +12,7 @@ type Mutation {
   signup(user: SignupInput!): User!
   login(credentials: LoginInput!): User!
   appleLogin(email: String!): User!
+  waitListSignup(email: String!): Boolean!
 }
 
 input SoundboardLinkInput {

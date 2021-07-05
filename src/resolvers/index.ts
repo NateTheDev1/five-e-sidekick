@@ -4,6 +4,7 @@ import { deleteSoundboard } from './mutation/soundboard/deleteSoundboard';
 import { deleteSoundboardLink } from './mutation/soundboard/deleteSoundboardLink';
 import { appleLogin, login } from './mutation/user/login';
 import { signup } from './mutation/user/signup';
+import { waitListSignup } from './mutation/user/waitListSignup';
 import {
 	getSoundboard,
 	getSoundboards,
@@ -25,6 +26,7 @@ export const resolvers: Resolvers.Resolvers = {
 		createSoundboard: createSoundboard,
 		addSoundboardLink: addSoundboardLink,
 		deleteSoundboardLink: deleteSoundboardLink,
-		deleteSoundboard: deleteSoundboard
+		deleteSoundboard: deleteSoundboard,
+		waitListSignup: waitListSignup
 	}
 };
