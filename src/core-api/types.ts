@@ -54,6 +54,34 @@ export type AbilityStatic = {
 	name: AbilityConstants;
 };
 
+export type ProficiencyType = 'Weapon' | 'Tool' | 'Armor' | 'Language';
+
+export type ToolStatic = {
+	id: number;
+	name: string;
+	typeName: 'Tool Proficiency' | 'Weapon' | 'DragonType';
+};
+
+export type TraitStatic = {
+	id: number;
+	name: string;
+	description: string;
+	choose?: number;
+	from?: ToolStatic[];
+	actionName?: string;
+};
+
+export type ProficiencyStatic = {
+	id: number;
+	type: ProficiencyType;
+	name: string;
+};
+
+export type ResistenceStatic = {
+	id: number;
+	name: string;
+};
+
 export type SkillStatic = {
 	id: number;
 	name: SkillConstants;
@@ -82,7 +110,7 @@ export type AbilityIncreases = {
 
 export type ProficiencyAdditions = {
 	choose: number;
-	from: SkillStatic;
+	from: SkillStatic[];
 };
 
 export type StatBonus = {
@@ -95,10 +123,9 @@ export type Race = {
 	description: string;
 	traits: IDArray;
 	traitsDescription: string;
-	bonuses: StatBonus;
+	bonuses: StatBonus[];
 	resistances: IDArray;
 	proficiencies: IDArray;
-	languages: IDArray;
 	abilityIncreases: AbilityIncreases;
 	languageAdditions: LanguageAdditions;
 	proficiencyAdditions: ProficiencyAdditions;

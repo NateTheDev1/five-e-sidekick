@@ -1,5 +1,11 @@
-import { Abilities, Languages, Skills } from './static-data';
-import { APIMode, AbilityStatic, LanguageStatic, SkillStatic } from './types';
+import { Abilities, Languages, Skills, Tools } from './static-data';
+import {
+	APIMode,
+	AbilityStatic,
+	LanguageStatic,
+	SkillStatic,
+	ToolStatic
+} from './types';
 
 /**
  * @class CoreAPI
@@ -11,6 +17,7 @@ class CoreAPI {
 	private abilities: AbilityStatic[] = [...Abilities];
 	private languages: LanguageStatic[] = [...Languages];
 	private skills: SkillStatic[] = [...Skills];
+	private tools: ToolStatic[] = [...Tools];
 
 	/**
 	 *
@@ -36,6 +43,16 @@ class CoreAPI {
 	 * @param id a background ID
 	 */
 	getBackground(id: number) {}
+
+	/**
+	 *
+	 * @param id a tool id
+	 */
+	getTool(id: number) {
+		const tool = this.findById(this.tools, id) as ToolStatic;
+		return tool;
+	}
+
 	/**
 	 *
 	 * @param id an equipment item ID
