@@ -1,5 +1,5 @@
 import { api } from '..';
-import { Race, ResistenceStatic } from '../types';
+import { Race } from '../types';
 
 export const HillDwarf: Race = {
 	name: 'Hill DWarf',

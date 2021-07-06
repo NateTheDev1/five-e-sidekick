@@ -54,7 +54,12 @@ export type AbilityStatic = {
 	name: AbilityConstants;
 };
 
-export type ProficiencyType = 'Weapon' | 'Tool' | 'Armor' | 'Language';
+export type ProficiencyType =
+	| 'Weapon'
+	| 'Tool'
+	| 'Armor'
+	| 'Language'
+	| 'Skill';
 
 export type ToolStatic = {
 	id: number;

@@ -293,6 +293,63 @@ export const traits: TraitStatic[] = [
 		description:
 			'Your hit point maximum increases by 1, and it increases by 1 every time you gain a level.',
 		actionName: 'DwarvenToughness'
+	},
+	{
+		id: 10,
+		name: 'Dwarven Armor Training',
+		description: 'You have proficiency with light and medium armor.'
+	},
+	{
+		id: 11,
+		name: 'Keen Senses',
+		description: 'You have proficiency in the Perception skill.'
+	},
+	// TODO: Implement fey ancestry action
+	{
+		id: 12,
+		name: 'Fey Ancestry',
+		description:
+			'You have advantage on saving throws against being charmed, and magic can’t put you to sleep.',
+		actionName: 'Fey Ancestry'
+	},
+	{
+		id: 13,
+		name: 'Trance',
+		description:
+			'Elves don’t need to sleep. Instead, they meditate deeply, remaining semiconscious, for 4 hours a day. (The Common word for such meditation is “trance.”) While meditating, you can dream after a fashion; such dreams are actually mental exercises that have become reflexive through years of practice. After resting in this way, you gain the same benefit that a human does from 8 hours of sleep.'
+	},
+	// TODO: Implement fet step action
+	{
+		id: 14,
+		name: 'Fey Step',
+		description:
+			'You can cast the misty step spell once using this trait. You regain the ability to do so when you finish a short or long rest.',
+		actionName: 'Fey Step'
+	},
+	// Implement action
+	{
+		id: 15,
+		name: 'Cantrip',
+		description:
+			'You know one cantrip of your choice from the wizard spell list. Intelligence is your spellcasting ability for it.',
+		actionName: 'Choose Cantrip'
+	},
+	{
+		id: 16,
+		name: 'Languages',
+		description:
+			'You can speak, read, and write Common, Elvish, and one extra language of your choice.'
+	},
+	{
+		id: 17,
+		name: 'Mask of the Wild',
+		description:
+			'You can attempt to hide even when you are only lightly obscured by foliage, heavy rain, falling snow, mist, and other natural phenomena.'
+	},
+	{
+		id: 18,
+		name: 'Skill Versatility',
+		description: 'You gain proficiency in two skills of your choice.'
 	}
 ];
 
@@ -343,5 +400,20 @@ export const Proficiencies: ProficiencyStatic[] = [
 		id: 4,
 		name: 'Warhammer',
 		type: 'Weapon'
+	},
+	{
+		id: 5,
+		name: 'Light Armor',
+		type: 'Armor'
+	},
+	{
+		id: 6,
+		name: 'Medium Armor',
+		type: 'Armor'
+	},
+	{
+		id: 7,
+		name: 'Perception',
+		type: 'Skill'
 	}
 ];
