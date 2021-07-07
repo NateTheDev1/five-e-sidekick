@@ -23,12 +23,10 @@ import {
 } from './types';
 
 /**
- * @class CoreAPI
  * @version V3.0.0
- * @constructor None
  * @description The core API that gets data from the different categories.
  */
-class CoreAPI {
+export class CoreAPI {
 	private mode: APIMode = 'active';
 	private abilities: AbilityStatic[] = [...Abilities];
 	private languages: LanguageStatic[] = [...Languages];
@@ -231,4 +229,7 @@ class CoreAPI {
 	getSpell(id: number) {}
 }
 
+/**
+ * @description Exported member of the CoreAPI
+ */
 export const api = new CoreAPI();
