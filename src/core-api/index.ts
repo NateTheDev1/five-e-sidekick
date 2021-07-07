@@ -1,4 +1,13 @@
-import { Abilities, Languages, races, Skills, Tools } from './static-data';
+import {
+	Abilities,
+	backgroundFeatures,
+	Languages,
+	PersonalCharacteristics,
+	Proficiencies,
+	races,
+	Skills,
+	Tools
+} from './static-data';
 import {
 	APIMode,
 	AbilityStatic,
@@ -6,11 +15,16 @@ import {
 	SkillStatic,
 	ToolStatic,
 	RaceStatic,
-	ProficiencyType
+	ProficiencyType,
+	BackgroundFeature,
+	PersonalCharacteristicsMicro,
+	IDArray,
+	ProficiencyStatic
 } from './types';
 
 /**
  * @class CoreAPI
+ * @version V3.0.0
  * @constructor None
  * @description The core API that gets data from the different categories.
  */
@@ -21,6 +35,10 @@ class CoreAPI {
 	private skills: SkillStatic[] = [...Skills];
 	private tools: ToolStatic[] = [...Tools];
 	private races: RaceStatic[] = [...races];
+	private backgroundFeatures: BackgroundFeature[] = [...backgroundFeatures];
+	private personalCharacteristics: PersonalCharacteristicsMicro['selections'][0][] =
+		[...PersonalCharacteristics];
+	private proficiencies: ProficiencyStatic[] = [...Proficiencies];
 
 	/**
 	 *
@@ -34,7 +52,18 @@ class CoreAPI {
 
 	/**
 	 *
-	 * @param id a race ID
+	 * @param arr Array of values with at least the key 'id'
+	 * @param id the id you look to find
+	 * @returns the matching element by id
+	 */
+	private findById(arr: any[], id: number) {
+		return arr.find(el => el.id === id);
+	}
+
+	/**
+	 *
+	 * @param id a race id
+	 * @returns Race
 	 */
 	getRace(id: number) {
 		const race = this.findById(this.races, id) as RaceStatic;
@@ -43,7 +72,7 @@ class CoreAPI {
 
 	/**
 	 *
-	 * @returns list of all races
+	 * @returns Race[]
 	 */
 	getRaces() {
 		return [...this.races];
@@ -51,14 +80,16 @@ class CoreAPI {
 
 	/**
 	 *
-	 * @param id a class ID
+	 * @param id id of background feature
+	 * @return BackgroundFeature
 	 */
-	getClass(id: number) {}
-	/**
-	 *
-	 * @param id a background ID
-	 */
-	getBackground(id: number) {}
+	getBackgroundFeature(id: number) {
+		const bgFeature = this.findById(
+			this.backgroundFeatures,
+			id
+		) as BackgroundFeature;
+		return bgFeature;
+	}
 
 	/**
 	 *
@@ -71,15 +102,30 @@ class CoreAPI {
 
 	/**
 	 *
-	 * @param id an equipment item ID
+	 * @param id a proficiency ID
+	 * @returns ProficiencyStatic
 	 */
-	getEquipmentItem(id: number) {}
+	getProficiency(id: number) {
+		const prof = this.findById(this.proficiencies, id) as ProficiencyStatic;
+
+		return prof;
+	}
 
 	/**
 	 *
-	 * @param id a spell ID
+	 * @param ids an array of proficiency ids
+	 * @returns a list of proficiencies
 	 */
-	getSpell(id: number) {}
+	getProficiencies(ids: IDArray) {
+		const profs: ProficiencyStatic[] = [];
+
+		for (let i = 0; i < ids.length; i++) {
+			profs.push(this.findById(this.proficiencies, ids[i]));
+		}
+
+		return profs;
+	}
+
 	/**
 	 *
 	 * @param id a skill ID
@@ -117,19 +163,31 @@ class CoreAPI {
 
 	/**
 	 *
-	 * @param id an alignment ID
+	 * @param id a characteristic id
+	 * @returns personal characteristic (i.e trait, flaw, bond, ideal)
 	 */
-	getAlignment(id: number) {}
-
-	getAlignments() {}
+	getPersonalCharacteristic(id: number) {
+		const char = this.findById(
+			this.personalCharacteristics,
+			id
+		) as PersonalCharacteristicsMicro['selections'][0];
+		return char;
+	}
 
 	/**
 	 *
-	 * @param id a lifestyle ID
+	 * @param ids IDArray
+	 * @returns an array of personal characteristics
 	 */
-	getLifestyle(id: number) {}
+	getPersonalCharacteristics(ids: IDArray) {
+		const chars: PersonalCharacteristicsMicro['selections'][0][] = [];
 
-	getLifestyles() {}
+		for (let i = 0; i < ids.length; i++) {
+			chars.push(this.findById(this.personalCharacteristics, ids[i]));
+		}
+
+		return chars;
+	}
 
 	/**
 	 *
@@ -156,7 +214,6 @@ class CoreAPI {
 	getProficiencyByType(type: ProficiencyType) {
 		// pseudo switch - case by type
 	}
-
 	/**
 	 *
 	 * @param inventory An array of inventory item IDS
@@ -164,10 +221,14 @@ class CoreAPI {
 	 * @returns InventoryItem[]
 	 */
 	buildInventory(inventory: number[]) {}
-
-	private findById(arr: any[], id: number) {
-		return arr.find(el => el.id === id);
-	}
+	getAlignment(id: number) {}
+	getAlignments() {}
+	getLifestyle(id: number) {}
+	getLifestyles() {}
+	getClass(id: number) {}
+	getBackground(id: number) {}
+	getEquipmentItem(id: number) {}
+	getSpell(id: number) {}
 }
 
 export const api = new CoreAPI();

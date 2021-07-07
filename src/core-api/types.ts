@@ -143,6 +143,7 @@ export type SkillProficiencyAdditions = {
 };
 
 export type ProficiencyAdditions = {
+	title: string;
 	choose: number;
 	from: ProficiencyStatic[];
 };
@@ -157,9 +158,16 @@ export type RollGeneric = {
 	amount: number;
 };
 
-export type PersonalCharacteristicsSelection = {
+export type PersonalCharacteristicsMicro = {
 	roll: RollGeneric;
-	selections: { id: number; description: string };
+	selections: { id: number; description: string }[];
+};
+
+export type PersonalCharacteristicsSelection = {
+	traits: PersonalCharacteristicsMicro;
+	ideals: PersonalCharacteristicsMicro;
+	flaws: PersonalCharacteristicsMicro;
+	bonds: PersonalCharacteristicsMicro;
 };
 
 export type BackgroundFeature = {
@@ -180,6 +188,11 @@ export type Race = {
 	languageAdditions: LanguageAdditions;
 	proficiencyAdditions: SkillProficiencyAdditions;
 	addedCantrips: IDArray;
+};
+
+export type BackgroundStatic = {
+	id: number;
+	background: Background;
 };
 
 export type Background = {
