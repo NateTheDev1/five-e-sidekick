@@ -1,10 +1,12 @@
-import { Abilities, Languages, Skills, Tools } from './static-data';
+import { Abilities, Languages, races, Skills, Tools } from './static-data';
 import {
 	APIMode,
 	AbilityStatic,
 	LanguageStatic,
 	SkillStatic,
-	ToolStatic
+	ToolStatic,
+	RaceStatic,
+	ProficiencyType
 } from './types';
 
 /**
@@ -18,6 +20,7 @@ class CoreAPI {
 	private languages: LanguageStatic[] = [...Languages];
 	private skills: SkillStatic[] = [...Skills];
 	private tools: ToolStatic[] = [...Tools];
+	private races: RaceStatic[] = [...races];
 
 	/**
 	 *
@@ -28,11 +31,24 @@ class CoreAPI {
 	setMode(mode: APIMode) {
 		this.mode = mode;
 	}
+
 	/**
 	 *
 	 * @param id a race ID
 	 */
-	getRace(id: number) {}
+	getRace(id: number) {
+		const race = this.findById(this.races, id) as RaceStatic;
+		return race;
+	}
+
+	/**
+	 *
+	 * @returns list of all races
+	 */
+	getRaces() {
+		return [...this.races];
+	}
+
 	/**
 	 *
 	 * @param id a class ID
@@ -130,6 +146,15 @@ class CoreAPI {
 	 */
 	getLanguages() {
 		return [...this.languages];
+	}
+
+	// TODO: proficiencies by type
+	/**
+	 *
+	 * @param get all proficiencies by type
+	 */
+	getProficiencyByType(type: ProficiencyType) {
+		// pseudo switch - case by type
 	}
 
 	/**

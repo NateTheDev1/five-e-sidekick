@@ -1,9 +1,23 @@
 import { api } from '.';
+import { Dragonborn } from './Races/Dragonborn';
+import { Eladrin } from './Races/Eladrin';
+import { HalfElf } from './Races/HalfElf';
+import { HalfOrc } from './Races/HalfOrc';
+import { HighElf } from './Races/HighElf';
+import { HillDwarf } from './Races/HillDwarf';
+import { Human } from './Races/Human';
+import { LightfootHalfling } from './Races/LightfootHalfling';
+import { MountainDwarf } from './Races/MountainDwarf';
+import { RockGnome } from './Races/RockGnome';
+import { StoutHalfling } from './Races/StoutHalfling';
+import { Tiefling } from './Races/Tiefling';
+import { WoodElf } from './Races/WoodfElf';
 import {
 	AbilityStatic,
 	CantripStatic,
 	LanguageStatic,
 	ProficiencyStatic,
+	RaceStatic,
 	ResistenceStatic,
 	SkillStatic,
 	ToolStatic,
@@ -550,5 +564,64 @@ export const Proficiencies: ProficiencyStatic[] = [
 		id: 9,
 		name: "Artisan's Tools",
 		type: 'Tool'
+	}
+];
+
+export const races: RaceStatic[] = [
+	{
+		id: 1,
+		race: Dragonborn
+	},
+	{
+		id: 2,
+		race: Eladrin
+	},
+	{
+		id: 3,
+		race: HalfElf
+	},
+	{
+		id: 4,
+		race: HalfElf
+	},
+	{
+		id: 5,
+		race: HalfOrc
+	},
+	{
+		id: 6,
+		race: HighElf
+	},
+	{
+		id: 7,
+		race: HillDwarf
+	},
+	{
+		id: 8,
+		race: Human
+	},
+	{
+		id: 9,
+		race: LightfootHalfling
+	},
+	{
+		id: 10,
+		race: MountainDwarf
+	},
+	{
+		id: 11,
+		race: RockGnome
+	},
+	{
+		id: 12,
+		race: StoutHalfling
+	},
+	{
+		id: 13,
+		race: Tiefling
+	},
+	{
+		id: 14,
+		race: WoodElf
 	}
 ];

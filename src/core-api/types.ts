@@ -1,3 +1,5 @@
+export type Omit<T, K extends keyof T> = Pick<T, Exclude<keyof T, K>>;
+
 export type APIMode = 'static' | 'active';
 
 export type IDArray = number[];
@@ -93,6 +95,11 @@ export type TraitStatic = {
 	actionName?: string;
 };
 
+export type RaceStatic = {
+	id: number;
+	race: Race;
+};
+
 export type ProficiencyStatic = {
 	id: number;
 	type: ProficiencyType;
@@ -130,14 +137,35 @@ export type AbilityIncreases = {
 	from: AbilityIncrease[];
 };
 
-export type ProficiencyAdditions = {
+export type SkillProficiencyAdditions = {
 	choose: number;
 	from: SkillStatic[];
+};
+
+export type ProficiencyAdditions = {
+	choose: number;
+	from: ProficiencyStatic[];
 };
 
 export type StatBonus = {
 	amount: number;
 	stat: AbilityConstants;
+};
+
+export type RollGeneric = {
+	sides: number;
+	amount: number;
+};
+
+export type PersonalCharacteristicsSelection = {
+	roll: RollGeneric;
+	selections: { id: number; description: string };
+};
+
+export type BackgroundFeature = {
+	id: number;
+	name: string;
+	description: string;
 };
 
 export type Race = {
@@ -150,6 +178,16 @@ export type Race = {
 	proficiencies: IDArray;
 	abilityIncreases: AbilityIncreases;
 	languageAdditions: LanguageAdditions;
-	proficiencyAdditions: ProficiencyAdditions;
+	proficiencyAdditions: SkillProficiencyAdditions;
 	addedCantrips: IDArray;
+};
+
+export type Background = {
+	name: string;
+	description: string;
+	proficiencies: IDArray;
+	languageAdditions: Omit<LanguageAdditions, 'defaults'>;
+	proficencyAddition: ProficiencyAdditions;
+	traitsSelection: PersonalCharacteristicsSelection;
+	backgroundFeatures: BackgroundFeature[];
 };
