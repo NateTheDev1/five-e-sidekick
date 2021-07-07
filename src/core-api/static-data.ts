@@ -1,6 +1,7 @@
 import { api } from '.';
 import {
 	AbilityStatic,
+	CantripStatic,
 	LanguageStatic,
 	ProficiencyStatic,
 	ResistenceStatic,
@@ -350,6 +351,126 @@ export const traits: TraitStatic[] = [
 		id: 18,
 		name: 'Skill Versatility',
 		description: 'You gain proficiency in two skills of your choice.'
+	},
+	{
+		id: 19,
+		name: 'Menacing',
+		description: 'You gain proficiency in the Intimidation skill.'
+	},
+	{
+		id: 20,
+		name: 'Relentless Endurance',
+		description:
+			'When you are reduced to 0 hit points but not killed outright, you can drop to 1 hit point instead. You can’t use this feature again until you finish a long rest.'
+	},
+	// TODO: savage attacks action
+	{
+		id: 21,
+		name: 'Savage Attacks',
+		description:
+			'When you score a critical hit with a melee weapon attack, you can roll one of the weapon’s damage dice one additional time and add it to the extra damage of the critical hit.',
+		actionName: 'Savage Attacks'
+	},
+	// TODO: lucky action
+	{
+		id: 22,
+		name: 'Lucky',
+		description:
+			'When you roll a 1 on the d20 for an attack roll, ability check, or saving throw, you can reroll the die and must use the new roll.',
+		actionName: 'Lucky'
+	},
+	{
+		id: 23,
+		name: 'Brave',
+		description:
+			'You have advantage on saving throws against being frightened.'
+	},
+	{
+		id: 24,
+		name: 'Halfling Nimbleness',
+		description:
+			'You can move through the space of any creature that is of a size larger than yours.'
+	},
+	{
+		id: 25,
+		name: 'Naturally Stealthy',
+		description:
+			'You can attempt to hide even when you are obscured only by a creature that is at least one size larger than you.'
+	},
+	{
+		id: 26,
+		name: 'Stout Resillience',
+		description:
+			'You have advantage on saving throws against poison, and you have resistance against poison damage.'
+	},
+	{
+		id: 27,
+		name: 'Languages',
+		description:
+			'You can speak, read, and write Common and one extra language of your choice. Humans typically learn the languages of other peoples they deal with, including obscure dialects. They are fond of sprinkling their speech with words borrowed from other tongues: Orc curses, Elvish musical expressions, Dwarvish military phrases, and so on.'
+	},
+	{
+		id: 28,
+		name: 'Ability Score Increase',
+		description: ' Your ability scores each increase by 1.'
+	},
+	{
+		id: 29,
+		name: 'Gnome Cunning',
+		description:
+			'You have advantage on all Intelligence, Wisdom, and Charisma saving throws against magic.'
+	},
+	// TODO: add artificier's lore action
+	{
+		id: 30,
+		name: "Artificer's Lore",
+		description:
+			'Whenever you make an Intelligence (History) check related to magic items, alchemical objects, or technological devices, you can add twice your proficiency bonus, instead of any proficiency bonus you normally apply.',
+		actionName: "Artificier's Lore"
+	},
+	// TODO: add tinkering action
+	{
+		id: 31,
+		name: 'Tinker',
+		description:
+			'You have proficiency with artisan’s tools (tinker’s tools). Using those tools, you can spend 1 hour and 10 gp worth of materials to construct a Tiny clockwork device (AC 5, 1 hp). The device ceases to function after 24 hours (unless you spend 1 hour repairing it to keep the device functioning), or when you use your action to dismantle it; at that time, you can reclaim the materials used to create it. You can have up to three such devices active at a time. When you create a device, choose one of the following options: Clockwork Toy. This toy is a clockwork animal, monster, or person, such as a frog, mouse, bird, dragon, or soldier. When placed on the ground, the toy moves 5 feet across the ground on each of your turns in a random direction. It makes noises as appropriate to the creature it represents. Fire Starter. The device produces a miniature flame, which you can use to light a candle, torch, or campfire. Using the device requires your action. Music Box. When opened, this music box plays a single song at a moderate volume. The box stops playing when it reaches the song’s end or when it is closed.'
+	},
+	{
+		id: 32,
+		name: 'Hellish Resistance',
+		description: 'You have resistance to fire damage.'
+	},
+	// TODO: ovveride attackOrSave on cantrip
+	{
+		id: 33,
+		name: 'Infernal Legacy',
+		description:
+			'You know the thaumaturgy cantrip. When you reach 3rd level, you can cast the hellish rebuke spell as a 2nd-level spell once with this trait and regain the ability to do so when you finish a long rest. When you reach 5th level, you can cast the darkness spell once with this trait and regain the ability to do so when you finish a long rest. Charisma is your spellcasting ability for these spells.'
+	}
+];
+
+export const cantrips: CantripStatic[] = [
+	{
+		id: 1,
+		level: 'Cantrip',
+		duration: '1 Minute',
+		castingTime: '1 Action',
+		range: '30 ft.',
+		components: 'V',
+		damage: 'Control',
+		school: 'Transmutation',
+		attackOrSave: 'None',
+		name: 'Thaumaturgy',
+		description:
+			'You manifest a minor wonder, a sign of supernatural power, within range. You create one of the following magical effects within range',
+		extraDescroption: `Your voice booms up to three times as loud as normal for 1 minute.
+		You cause flames to flicker, brighten, dim, or change color for 1 minute.
+		You cause harmless tremors in the ground for 1 minute.
+		You create an instantaneous sound that originates from a point of your choice within range, such as a rumble of thunder, the cry of a raven, or ominous whispers.
+		You instantaneously cause an unlocked door or window to fly open or slam shut.
+		You alter the appearance of your eyes for 1 minute.`,
+		availableFor: 'Cleric',
+		from: 'Basic Rules, pg. 282'
 	}
 ];
 
@@ -376,6 +497,10 @@ export const Resistences: ResistenceStatic[] = [
 	{
 		id: 1,
 		name: 'Poison Damage'
+	},
+	{
+		id: 2,
+		name: 'Fire'
 	}
 ];
 
@@ -415,5 +540,15 @@ export const Proficiencies: ProficiencyStatic[] = [
 		id: 7,
 		name: 'Perception',
 		type: 'Skill'
+	},
+	{
+		id: 8,
+		name: 'Intimidation',
+		type: 'Skill'
+	},
+	{
+		id: 9,
+		name: "Artisan's Tools",
+		type: 'Tool'
 	}
 ];

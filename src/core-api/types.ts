@@ -49,6 +49,23 @@ export type SkillConstants =
 	| 'Stealth'
 	| 'Survival';
 
+export type CantripStatic = {
+	id: number;
+	level: string;
+	duration: string;
+	castingTime: string;
+	range: string;
+	components: string;
+	damage: string;
+	school: string;
+	attackOrSave: string;
+	name: string;
+	description: string;
+	extraDescroption: string;
+	availableFor: string;
+	from: string;
+};
+
 export type AbilityStatic = {
 	id: number;
 	name: AbilityConstants;
