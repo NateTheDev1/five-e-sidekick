@@ -21,11 +21,11 @@ export const Criminal: Background = {
 		},
 		flaws: {
 			roll: { sides: 6, amount: 1 },
-			selections: api.getPersonalCharacteristics([])
+			selections: api.getPersonalCharacteristics([47, 48, 49, 50, 51, 52])
 		},
 		bonds: {
 			roll: { sides: 6, amount: 1 },
-			selections: api.getPersonalCharacteristics([])
+			selections: api.getPersonalCharacteristics([41, 42, 43, 44, 45, 46])
 		}
 	},
 	proficencyAddition: {
@@ -34,61 +34,3 @@ export const Criminal: Background = {
 		from: api.getProficiencies([15, 16, 17, 18])
 	}
 };
-
-// 		this.bondsSelection = {
-// 			roll: {
-// 				amount: 1,
-// 				sides: 6
-// 			},
-// 			selections: [
-// 				{
-// 					id: 0,
-// 					text: "I'm trying to pay off an old debt I owe to a generous benefactor."
-// 				},
-// 				{ id: 1, text: 'My ill-gotten gains go to support my family.' },
-// 				{
-// 					id: 2,
-// 					text: 'Something important was taken from me, and I aim to steal it back.'
-// 				},
-// 				{
-// 					id: 3,
-// 					text: 'I will become the greatest thief that ever lived.'
-// 				},
-// 				{
-// 					id: 4,
-// 					text: "I'm guilty of a terrible crime. I hope I can redeem myself for it."
-// 				},
-// 				{
-// 					id: 5,
-// 					text: 'Someone I loved died because of a mistake I made. That will never happen again.'
-// 				}
-// 			]
-// 		};
-// 		this.flawsSelection = {
-// 			roll: {
-// 				amount: 1,
-// 				sides: 6
-// 			},
-// 			selections: [
-// 				{
-// 					id: 0,
-// 					text: "When I see something valuable, I can't think about anything but how to steal it."
-// 				},
-// 				{
-// 					id: 1,
-// 					text: 'When faced with a choice between money and my friends, I usually choose the money.'
-// 				},
-// 				{
-// 					id: 2,
-// 					text: "If there's a plan, I'll forget it. If I don't forget it, I'll ignore it."
-// 				},
-// 				{ id: 3, text: "I have a 'tell' that reveals when I'm lying." },
-// 				{ id: 4, text: 'I turn tail and run when things go bad.' },
-// 				{
-// 					id: 5,
-// 					text: "An innocent person is in prison for a crime that I committed. I'm okay with that."
-// 				}
-// 			]
-// 		};
-// 	}
-// }

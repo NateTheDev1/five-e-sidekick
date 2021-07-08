@@ -78,7 +78,8 @@ export type ProficiencyType =
 	| 'Tool'
 	| 'Armor'
 	| 'Language'
-	| 'Skill';
+	| 'Skill'
+	| 'Vehicle';
 
 export type ToolStatic = {
 	id: number;

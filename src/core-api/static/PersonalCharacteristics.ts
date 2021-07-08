@@ -190,5 +190,174 @@ export const PersonalCharacteristics: PersonalCharacteristicsMicro['selections']
 			id: 40,
 			description:
 				"Redemption. There's a spark of good in everyone. (Good)"
+		},
+		{
+			id: 41,
+			description:
+				"I'm trying to pay off an old debt I owe to a generous benefactor."
+		},
+		{ id: 42, description: 'My ill-gotten gains go to support my family.' },
+		{
+			id: 43,
+			description:
+				'Something important was taken from me, and I aim to steal it back.'
+		},
+		{
+			id: 44,
+			description: 'I will become the greatest thief that ever lived.'
+		},
+		{
+			id: 45,
+			description:
+				"I'm guilty of a terrible crime. I hope I can redeem myself for it."
+		},
+		{
+			id: 46,
+			description:
+				'Someone I loved died because of a mistake I made. That will never happen again.'
+		},
+		{
+			id: 47,
+			description:
+				"When I see something valuable, I can't think about anything but how to steal it."
+		},
+		{
+			id: 48,
+			description:
+				'When faced with a choice between money and my friends, I usually choose the money.'
+		},
+		{
+			id: 49,
+			description:
+				"If there's a plan, I'll forget it. If I don't forget it, I'll ignore it."
+		},
+		{ id: 50, description: "I have a 'tell' that reveals when I'm lying." },
+		{ id: 51, description: 'I turn tail and run when things go bad.' },
+		{
+			id: 52,
+			description:
+				"An innocent person is in prison for a crime that I committed. I'm okay with that."
+		},
+		{
+			id: 53,
+			description: 'I judge people by their actions, not their words.'
+		},
+		{
+			id: 54,
+			description:
+				"If someone is in trouble, I'm always willing to lend help."
+		},
+		{
+			id: 55,
+			description:
+				'When I set my mind to something, I follow through no matter what gets in my way.'
+		},
+		{
+			id: 56,
+			description:
+				'I have a strong sense of fair play and always try to find the most equitable solution to arguments.'
+		},
+		{
+			id: 57,
+			description:
+				"I'm confident in my own abilities and do what I can to instill confidence in others."
+		},
+		{
+			id: 58,
+			description: 'Thinking is for other people. I prefer action.'
+		},
+		{
+			id: 59,
+			description: 'I misuse long words in an attempt to sound smarter.'
+		},
+		{
+			id: 60,
+			description:
+				'I get bored easily. When am I going to get on with my destiny.'
+		},
+		{
+			id: 61,
+			description:
+				'Respect. People deserve to be treated with dignity and respect. (Good)'
+		},
+		{
+			id: 62,
+			description:
+				'Fairness. No one should get preferential treatment before the law, and no one is above the law. (Lawful)'
+		},
+		{
+			id: 63,
+			description:
+				'Freedom. Tyrants must not be allowed to oppress the people. (Chaotic)'
+		},
+		{
+			id: 64,
+			description:
+				'Might. If I become strong, I can take what I want--what I deserve. (Evil)'
+		},
+		{
+			id: 65,
+			description:
+				"Sincerity. There's no good pretending to be something I'm not. (Neutral)"
+		},
+		{
+			id: 66,
+			description:
+				'Destiny. Nothing and no one can steer me away from my higher calling. (Any)'
+		},
+		{
+			id: 67,
+			description:
+				'The tyrant who rules my land will stop at nothing to see me killed.'
+		},
+		{
+			id: 68,
+			description:
+				"I'm convinced of the significance of my destiny, and blind to my shortcomings and the risk of failure."
+		},
+		{
+			id: 69,
+			description:
+				'The people who knew me when I was young know my shameful secret, so I can never go home again.'
+		},
+		{
+			id: 70,
+			description:
+				'I have a weakness for the vices of the city, especially hard drink.'
+		},
+		{
+			id: 71,
+			description:
+				'Secretly, I believe that things would be better if I were a tyrant lording over the land.'
+		},
+		{ id: 72, description: 'I have trouble trusting in my allies.' },
+		{
+			id: 73,
+			description:
+				'I have a family, but I have no idea where they are. One day, I hope to see them again.'
+		},
+		{
+			id: 74,
+			description:
+				'I worked the land, I love the land, and I will protect the land.'
+		},
+		{
+			id: 75,
+			description:
+				'A proud noble once gave me a horrible beating, and I will take my revenge on any bully I encounter.'
+		},
+		{
+			id: 76,
+			description:
+				'My tools are symbols of my past life, and I carry them so that I will never forget my roots.'
+		},
+		{
+			id: 77,
+			description: 'I protect those who cannot protect themselves.'
+		},
+		{
+			id: 78,
+			description:
+				'I wish my childhood sweetheart had come with me to pursue my destiny.'
 		}
 	];
