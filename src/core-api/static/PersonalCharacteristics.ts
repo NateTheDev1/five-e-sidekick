@@ -359,5 +359,473 @@ export const PersonalCharacteristics: PersonalCharacteristicsMicro['selections']
 			id: 78,
 			description:
 				'I wish my childhood sweetheart had come with me to pursue my destiny.'
+		},
+		{
+			id: 79,
+			description:
+				'My eloquent flattery makes everyone I talk to feel like the most wonderful and important person in the world.'
+		},
+		{
+			id: 80,
+			description:
+				'The common folk love me for my kindness and generosity.'
+		},
+		{
+			id: 81,
+			description:
+				'No one could doubt by looking at my regal bearing that I am a cut above the unwashed masses.'
+		},
+		{
+			id: 82,
+			description:
+				'I take great pains to always look my best and follow the latest fashions.'
+		},
+		{
+			id: 83,
+			description:
+				"I don't like to get my hands dirty, and I won't be caught dead in unsuitable accommodations."
+		},
+		{
+			id: 84,
+			description:
+				'Despite my birth, I do not place myself above other folk. We all have the same blood.'
+		},
+		{ id: 85, description: 'My favor, once lost, is lost forever.' },
+		{
+			id: 86,
+			description:
+				'If you do me an injury, I will crush you, ruin your name, and salt your fields.'
+		},
+		{
+			id: 87,
+			description:
+				'Respect. Respect is due to me because of my position, but all people regardless of station deserve to be treated with dignity. (Good)'
+		},
+		{
+			id: 88,
+			description:
+				'Responsibility. It is my duty to respect the authority of those above me, just as those below me must respect mine. (Lawful)'
+		},
+		{
+			id: 89,
+			description:
+				'Independence. I must prove that I can handle myself without the coddling of my family. (Chaotic)'
+		},
+		{
+			id: 90,
+			description:
+				'Power. If I can attain more power, no one will tell me what to do. (Evil)'
+		},
+		{ id: 91, description: 'Family. Blood runs thicker than water. (Any)' },
+		{
+			id: 92,
+			description:
+				'Noble Obligation. It is my duty to protect and care for the people beneath me. (Good)'
+		},
+		{
+			id: 93,
+			description: 'I secretly believe that everyone is beneath me.'
+		},
+		{
+			id: 94,
+			description:
+				'I hide a truly scandalous secret that could ruin my family forever.'
+		},
+		{
+			id: 95,
+			description:
+				"I too often hear veiled insults and threats in every word addressed to me, and I'm quick to anger."
+		},
+		{
+			id: 96,
+			description: 'I have an insatiable desire for carnal pleasures.'
+		},
+		{ id: 97, description: 'In fact, the world does revolve around me.' },
+		{
+			id: 98,
+			description:
+				'By my words and actions, I often bring shame to my family.'
+		},
+		{
+			id: 99,
+			description:
+				'I will face any challenge to win the approval of my family.'
+		},
+		{
+			id: 100,
+			description:
+				"My house's alliance with another noble family must be sustained at all costs."
+		},
+		{
+			id: 101,
+			description:
+				'Nothing is more important that the other members of my family.'
+		},
+		{
+			id: 102,
+			description:
+				'I am in love with the heir of a family that my family despises.'
+		},
+		{ id: 103, description: 'My loyalty to my sovereign is unwavering.' },
+		{
+			id: 104,
+			description: 'The common folk must see me as a hero of the people.'
+		},
+		{
+			id: 105,
+			description: 'I don’t run from evil. Evil runs from me.'
+		},
+		{
+			id: 106,
+			description:
+				'I like to read and memorize poetry. It keeps me calm and brings me fleeting moments of happiness.'
+		},
+		{
+			id: 107,
+			description:
+				'I spend money freely and live life to the fullest, knowing that tomorrow I might die.'
+		},
+		{
+			id: 108,
+			description: 'I live for the thrill of the hunt.'
+		},
+		{
+			id: 109,
+			description:
+				'I don’t talk about the thing that torments me. I’d rather not burden others with my curse.'
+		},
+		{
+			id: 110,
+			description: 'I expect danger around every corner.'
+		},
+		{
+			id: 111,
+			description:
+				'I refuse to become a victim, and I will not allow others to be victimized.'
+		},
+		{
+			id: 112,
+			description: 'I put no trust in divine beings.'
+		},
+		{
+			id: 113,
+			description:
+				'I try to help those in need, no matter what the personal cost. (Good)'
+		},
+		{
+			id: 114,
+			description:
+				'I’ll stop the spirits that haunt me or die trying. (Any)'
+		},
+		{
+			id: 115,
+			description:
+				'I kill monsters to make the world a safer place, and to exorcise my own demons. (Good)'
+		},
+		{
+			id: 116,
+			description:
+				'I have a dark calling that puts me above the law. (Chaotic)'
+		},
+		{
+			id: 117,
+			description:
+				'I like to know my enemy’s capabilities and weaknesses before rushing into battle. (Lawful)'
+		},
+		{
+			id: 118,
+			description:
+				'I’m a monster that destroys other monsters, and anything else that gets in my way. (Evil)'
+		},
+		{
+			id: 119,
+			description:
+				'I have certain rituals that I must follow every day. I can never break them.'
+		},
+		{
+			id: 120,
+			description: 'I assume the worst in people.'
+		},
+		{
+			id: 121,
+			description:
+				'I feel no compassion for the dead. They’re the lucky ones.'
+		},
+		{
+			id: 122,
+			description: 'I have an addiction.'
+		},
+		{
+			id: 123,
+			description:
+				'I am a purveyor of doom and gloom who lives in a world without hope.'
+		},
+		{
+			id: 124,
+			description: 'I talk to spirits that no one else can see.'
+		},
+		{
+			id: 125,
+			description:
+				'I keep my thoughts and discoveries in a journal. My journal is my legacy.'
+		},
+		{
+			id: 126,
+			description:
+				'I would sacrifice my life and my soul to protect the innocent.'
+		},
+		{
+			id: 127,
+			description:
+				'My torment drove away the person I love. I strive to win back the love I’ve lost.'
+		},
+		{
+			id: 128,
+			description:
+				'A terrible guilt consumes me. I hope that I can find redemption through my actions.'
+		},
+		{
+			id: 129,
+			description:
+				'There’s evil in me, I can feel it. It must never be set free.'
+		},
+		{
+			id: 130,
+			description:
+				'I have a child to protect. I must make the world a safer place for him (or her).'
+		},
+		{
+			id: 131,
+			description:
+				'I use polysyllabic words to convey the impression of great erudition.'
+		},
+		{
+			id: 132,
+			description:
+				"I've read every book in the world's greatest libraries--or like to boast that I have."
+		},
+		{
+			id: 133,
+			description:
+				"I'm used to helping out those who aren't as smart as I am, and I patiently explain anything and everything to others."
+		},
+		{
+			id: 134,
+			description: "There's nothing I like more than a good mystery."
+		},
+		{
+			id: 135,
+			description:
+				"I'm willing to listen to every side of an argument before I make my own judgment."
+		},
+		{
+			id: 136,
+			description:
+				'I...speak...slowly...when talking...to idiots...which...almost...everyone...is...compared...to me.'
+		},
+		{
+			id: 137,
+			description: 'I am horribly, horribly awkward in social situations.'
+		},
+		{
+			id: 138,
+			description:
+				"I'm convinced that people are always trying to steal my secrets."
+		},
+		{
+			id: 139,
+			description:
+				'Knowledge. The path to power and self-improvement is through knowledge. (Neutral)'
+		},
+		{
+			id: 140,
+			description:
+				'Beauty. What is beautiful points us beyond itself toward what is true. (Good)'
+		},
+		{
+			id: 141,
+			description:
+				'Logic. Emotions must not cloud our logical thinking. (Lawful)'
+		},
+		{
+			id: 142,
+			description:
+				'No Limits. Nothing should fetter the infinite possibility inherent in all existence. (Chaotic)'
+		},
+		{
+			id: 143,
+			description:
+				'Power. Knowledge is the path to power and domination. (Evil)'
+		},
+		{
+			id: 144,
+			description:
+				'Self-improvement. The goal of a life of study is the betterment of oneself.'
+		},
+		{
+			id: 145,
+			description: 'I am easily distracted by the promise of information.'
+		},
+		{
+			id: 146,
+			description:
+				'Most people scream and run when they see a demon. I stop and take notes on its anatomy.'
+		},
+		{
+			id: 147,
+			description:
+				'Unlocking an ancient mystery is worth the price of a civilization.'
+		},
+		{
+			id: 148,
+			description:
+				'I overlook obvious solutions in favor of complicated ones.'
+		},
+		{
+			id: 149,
+			description:
+				'I speak without really thinking through my words, invariably insulting others.'
+		},
+		{
+			id: 150,
+			description:
+				"I can't keep a secret to save my life, or anyone else's."
+		},
+		{ id: 151, description: 'It is my duty to protect my students.' },
+		{
+			id: 152,
+			description:
+				'I have an ancient text that holds terrible secrets that must not fall into the wrong hands.'
+		},
+		{
+			id: 153,
+			description:
+				'I work to preserve a library, university, scriptorium, or monastery.'
+		},
+		{
+			id: 154,
+			description:
+				"My life's work is a series of tomes related to a specific field of lore."
+		},
+		{
+			id: 155,
+			description:
+				"I've been searching my whole life for the answer to a certain question."
+		},
+		{
+			id: 156,
+			description:
+				'I sold my soul for knowledge. I hope to do great deeds and win it back.'
+		},
+		{ id: 157, description: "I'm always polite and respectful." },
+		{
+			id: 158,
+			description:
+				"I'm haunted by memories of war. I can't get the images of violence out of my mind."
+		},
+		{
+			id: 159,
+			description:
+				"I've lost too many friends, and I'm slow to make new ones."
+		},
+		{
+			id: 160,
+			description:
+				"I'm full of inspiring and cautionary tales from my military experience relevant to almost every combat situation."
+		},
+		{
+			id: 161,
+			description: 'I can stare down a hellhound without flinching.'
+		},
+		{
+			id: 162,
+			description: 'I enjoy being strong and like breaking things.'
+		},
+		{ id: 163, description: 'I have a crude sense of humor.' },
+		{
+			id: 164,
+			description:
+				'I face problems head-on. A simple direct solution is the best path to success.'
+		},
+		{
+			id: 165,
+			description:
+				'Greater Good. Our lot is to lay down our lives in defense of others. (Good)'
+		},
+		{
+			id: 166,
+			description:
+				'Responsibility. I do what I must and obey just authority. (Lawful)'
+		},
+		{
+			id: 167,
+			description:
+				'Independence. When people follow orders blindly they embrace a kind of tyranny. (Chaotic)'
+		},
+		{
+			id: 168,
+			description:
+				'Might. In life as in war, the stronger force wins. (Evil)'
+		},
+		{
+			id: 169,
+			description:
+				"Ideals aren't worth killing for or going to war for. (Neutral)"
+		},
+		{
+			id: 170,
+			description:
+				'Nation. My city, nation, or people are all that matter. (Any)'
+		},
+		{
+			id: 171,
+			description:
+				'The monstrous enemy we faced in battle still leaves me quivering with fear.'
+		},
+		{
+			id: 172,
+			description:
+				'I have little respect for anyone who is not a proven warrior.'
+		},
+		{
+			id: 173,
+			description:
+				'I made a terrible mistake in battle that cost many lives--and I would do anything to keep that mistake secret.'
+		},
+		{
+			id: 174,
+			description: 'My hatred of my enemies is blind and unreasoning.'
+		},
+		{
+			id: 175,
+			description: 'I obey the law, even if the law causes misery.'
+		},
+		{
+			id: 176,
+			description: "I'd rather eat my armor than admit when I'm wrong."
+		},
+		{
+			id: 177,
+			description:
+				'I would lay down my life for the people I served with.'
+		},
+		{
+			id: 178,
+			description:
+				'Someone saved my life on the battlefield. To this day, I will never leave a friend behind.'
+		},
+		{ id: 179, description: 'My honor is my life.' },
+		{
+			id: 180,
+			description:
+				"I'll never forget the crushing defeat my company suffered or the enemies who dealt it."
+		},
+		{
+			id: 181,
+			description: 'Those who fight beside me are those worth dying for.'
+		},
+		{
+			id: 182,
+			description: 'I fight for those who cannot fight for themselves.'
 		}
 	];

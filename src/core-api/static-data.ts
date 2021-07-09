@@ -1,4 +1,11 @@
 import { api } from '.';
+import { Acolyte } from './Backgrounds/Acolyte';
+import { Criminal } from './Backgrounds/Criminal';
+import { FolkHero } from './Backgrounds/FolkHero';
+import { HauntedOne } from './Backgrounds/HauntedOne';
+import { Noble } from './Backgrounds/Noble';
+import { Sage } from './Backgrounds/Sage';
+import { Soldier } from './Backgrounds/Soldier';
 import { Dragonborn } from './Races/Dragonborn';
 import { Eladrin } from './Races/Eladrin';
 import { HalfElf } from './Races/HalfElf';
@@ -14,6 +21,7 @@ import { Tiefling } from './Races/Tiefling';
 import { WoodElf } from './Races/WoodfElf';
 import {
 	AbilityStatic,
+	BackgroundStatic,
 	CantripStatic,
 	LanguageStatic,
 	RaceStatic,
@@ -578,5 +586,36 @@ export const races: RaceStatic[] = [
 	{
 		id: 14,
 		race: WoodElf
+	}
+];
+
+export const backgrounds: BackgroundStatic[] = [
+	{
+		id: 1,
+		background: Acolyte
+	},
+	{
+		id: 2,
+		background: Criminal
+	},
+	{
+		id: 3,
+		background: FolkHero
+	},
+	{
+		id: 4,
+		background: HauntedOne
+	},
+	{
+		id: 5,
+		background: Noble
+	},
+	{
+		id: 6,
+		background: Sage
+	},
+	{
+		id: 7,
+		background: Soldier
 	}
 ];

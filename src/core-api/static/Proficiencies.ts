@@ -1,4 +1,4 @@
-import { ProficiencyStatic } from '../types';
+import { ProficiencyStatic, AbilityConstants } from '../types';
 
 /**
  * @description List of proficiencies
@@ -199,6 +199,51 @@ export const Proficiencies: ProficiencyStatic[] = [
 	{
 		id: 39,
 		name: 'Persuasion',
+		type: 'Skill'
+	},
+	{
+		id: 40,
+		name: 'Arcana',
+		type: 'Skill'
+	},
+	{
+		id: 41,
+		name: 'Survival',
+		type: 'Skill'
+	},
+	{
+		id: 42,
+		name: 'Athletics',
+		type: 'Skill'
+	},
+	{
+		id: 43,
+		name: 'Strength',
+		type: 'Saving Throw'
+	},
+	{
+		id: 44,
+		name: 'Constitution',
+		type: 'Saving Throw'
+	},
+	{
+		id: 45,
+		name: 'Shields',
+		type: 'Armor'
+	},
+	{
+		id: 46,
+		name: 'Martial Weapons',
+		type: 'Weapon'
+	},
+	{
+		id: 47,
+		name: 'Simple Weapons',
+		type: 'Weapon'
+	},
+	{
+		id: 48,
+		name: 'Nature',
 		type: 'Skill'
 	}
 ];

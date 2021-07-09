@@ -4,6 +4,8 @@ export type APIMode = 'static' | 'active';
 
 export type IDArray = number[];
 
+// export type EquipmentTypeConstants = 'Martial Weapon' | 'Simple Weapon';
+
 export type AbilityConstants =
 	| 'Strength'
 	| 'Charisma'
@@ -73,13 +75,22 @@ export type AbilityStatic = {
 	name: AbilityConstants;
 };
 
+export type EquipmentStatic = {
+	id: number;
+	name: string;
+	description?: string;
+	packName?: string;
+	tag?: string;
+};
+
 export type ProficiencyType =
 	| 'Weapon'
 	| 'Tool'
 	| 'Armor'
 	| 'Language'
 	| 'Skill'
-	| 'Vehicle';
+	| 'Vehicle'
+	| 'Saving Throw';
 
 export type ToolStatic = {
 	id: number;
@@ -93,6 +104,14 @@ export type TraitStatic = {
 	description: string;
 	choose?: number;
 	from?: ToolStatic[];
+	actionName?: string;
+};
+
+export type ClassTraitStatic = {
+	id: number;
+	level: number;
+	title: string;
+	description: string;
 	actionName?: string;
 };
 
@@ -147,6 +166,27 @@ export type ProficiencyAdditions = {
 	title: string;
 	choose: number;
 	from: ProficiencyStatic[];
+};
+
+export type EquipmentAdditonNano = {
+	id: number;
+	quantity: number;
+};
+
+export type EquipmentAdditonMicro = {
+	items: EquipmentAdditonNano[];
+	choose?: number;
+};
+
+export type EquipmentAdditons = {
+	title: string;
+	choose: number;
+	from: EquipmentAdditonMicro[];
+};
+
+export type EquipmentAdditionsStatic = {
+	id: number;
+	quantity: number;
 };
 
 export type StatBonus = {
@@ -204,4 +244,41 @@ export type Background = {
 	proficencyAddition: ProficiencyAdditions;
 	traitsSelection: PersonalCharacteristicsSelection;
 	backgroundFeatures: BackgroundFeature[];
+};
+
+export type HitDie = {
+	amount: number;
+	sides: number;
+};
+
+export type HitPointBaseMicro = {
+	base: number;
+	modifier: AbilityConstants;
+};
+
+export type HitPointBaseMax = {
+	rollPossible: boolean;
+	default: number;
+	modifier: AbilityConstants;
+	addPrevious: boolean;
+};
+
+export type HitPointBase = {
+	atLevelOne: HitPointBaseMicro;
+	higherLevels: HitPointBaseMax;
+};
+
+export type CharacterClass = {
+	name: string;
+	description: string;
+	primaryAbility: string;
+	hitDie: HitDie;
+	hitPointBase: HitPointBase;
+	saves: IDArray;
+	proficiencies: IDArray;
+	proficiencySelection: ProficiencyAdditions;
+	traits: ClassTraitStatic[];
+	equipmentSelection: EquipmentAdditons[];
+	equipment: EquipmentAdditionsStatic[];
+	languages: LanguageStatic[];
 };

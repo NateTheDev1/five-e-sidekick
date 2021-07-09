@@ -1,6 +1,7 @@
 import {
 	Abilities,
 	backgroundFeatures,
+	backgrounds,
 	Languages,
 	PersonalCharacteristics,
 	Proficiencies,
@@ -8,6 +9,8 @@ import {
 	Skills,
 	Tools
 } from './static-data';
+import { Equipment } from './static/Equipment';
+import { ClassTraits } from './static/Traits';
 import {
 	APIMode,
 	AbilityStatic,
@@ -19,7 +22,10 @@ import {
 	BackgroundFeature,
 	PersonalCharacteristicsMicro,
 	IDArray,
-	ProficiencyStatic
+	ProficiencyStatic,
+	BackgroundStatic,
+	ClassTraitStatic,
+	EquipmentStatic
 } from './types';
 
 /**
@@ -37,6 +43,9 @@ export class CoreAPI {
 	private personalCharacteristics: PersonalCharacteristicsMicro['selections'][0][] =
 		[...PersonalCharacteristics];
 	private proficiencies: ProficiencyStatic[] = [...Proficiencies];
+	private backgrounds: BackgroundStatic[] = [...backgrounds];
+	private classTraits: ClassTraitStatic[] = [...ClassTraits];
+	private equipment: EquipmentStatic[] = [...Equipment];
 
 	/**
 	 *
@@ -204,6 +213,71 @@ export class CoreAPI {
 		return [...this.languages];
 	}
 
+	/**
+	 *
+	 * @param id id of background
+	 * @returns BackgroundStatic
+	 */
+	getBackground(id: number) {
+		const background = this.findById(
+			this.backgrounds,
+			id
+		) as BackgroundStatic;
+
+		return background;
+	}
+
+	/**
+	 *
+	 * @returns array of all backgrounds
+	 */
+	getBackgrounds() {
+		return [...this.backgrounds];
+	}
+
+	/**
+	 *
+	 * @param id class trait id
+	 * @returns ClassTraitStatic
+	 */
+	getClassTrait(id: number) {
+		const trait = this.findById(this.classTraits, id) as ClassTraitStatic;
+		return trait;
+	}
+
+	/**
+	 *
+	 * @param ids array of class trait ids
+	 * @returns ClassTraitStatic[]
+	 */
+	getClassTraits(ids: IDArray) {
+		const traits: ClassTraitStatic[] = [];
+
+		for (let i = 0; i < ids.length; i++) {
+			traits.push(this.findById(this.classTraits, ids[i]));
+		}
+
+		return traits;
+	}
+
+	/**
+	 *
+	 * @param min Starting Index
+	 * @param max Ending Index
+	 * @returns ClassTraitStatic[]
+	 */
+	getClassTraitsFromRange(min: number, max: number) {
+		const traits: ClassTraitStatic[] = [];
+
+		for (let i = min; i < max + 1; i++) {
+			traits.push(this.findById(this.classTraits, i));
+		}
+
+		return traits;
+	}
+
+	getEquipmentItem(id: number) {}
+
 	// TODO: proficiencies by type
 	/**
 	 *
@@ -224,9 +298,12 @@ export class CoreAPI {
 	getLifestyle(id: number) {}
 	getLifestyles() {}
 	getClass(id: number) {}
-	getBackground(id: number) {}
-	getEquipmentItem(id: number) {}
 	getSpell(id: number) {}
+
+	/**
+	 * @description Builds a character randomly choosing classes, races, and all other steps
+	 */
+	generateRandomCharacter() {}
 }
 
 /**

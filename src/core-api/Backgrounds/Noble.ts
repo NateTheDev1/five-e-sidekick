@@ -11,19 +11,23 @@ export const Noble: Background = {
 	traitsSelection: {
 		traits: {
 			roll: { sides: 8, amount: 1 },
-			selections: api.getPersonalCharacteristics([])
+			selections: api.getPersonalCharacteristics([
+				79, 81, 82, 83, 84, 85, 86
+			])
 		},
 		ideals: {
 			roll: { sides: 6, amount: 1 },
-			selections: api.getPersonalCharacteristics([])
+			selections: api.getPersonalCharacteristics([87, 88, 89, 90, 91, 92])
 		},
 		flaws: {
 			roll: { sides: 6, amount: 1 },
-			selections: api.getPersonalCharacteristics([])
+			selections: api.getPersonalCharacteristics([93, 94, 95, 96, 97, 98])
 		},
 		bonds: {
 			roll: { sides: 6, amount: 1 },
-			selections: api.getPersonalCharacteristics([])
+			selections: api.getPersonalCharacteristics([
+				99, 100, 101, 102, 103, 104
+			])
 		}
 	},
 	proficencyAddition: {
@@ -32,132 +36,3 @@ export const Noble: Background = {
 		from: api.getProficiencies([15, 16, 17, 18])
 	}
 };
-
-// 		this.traitsSelection = {
-// 			roll: {
-// 				amount: 1,
-// 				sides: 8
-// 			},
-// 			selections: [
-// 				{
-// 					id: 0,
-// 					text: 'My eloquent flattery makes everyone I talk to feel like the most wonderful and important person in the world.'
-// 				},
-// 				{
-// 					id: 1,
-// 					text: 'The common folk love me for my kindness and generosity.'
-// 				},
-// 				{
-// 					id: 2,
-// 					text: 'No one could doubt by looking at my regal bearing that I am a cut above the unwashed masses.'
-// 				},
-// 				{
-// 					id: 3,
-// 					text: 'I take great pains to always look my best and follow the latest fashions.'
-// 				},
-// 				{
-// 					id: 4,
-// 					text: "I don't like to get my hands dirty, and I won't be caught dead in unsuitable accommodations."
-// 				},
-// 				{
-// 					id: 5,
-// 					text: 'Despite my birth, I do not place myself above other folk. We all have the same blood.'
-// 				},
-// 				{ id: 6, text: 'My favor, once lost, is lost forever.' },
-// 				{
-// 					id: 7,
-// 					text: 'If you do me an injury, I will crush you, ruin your name, and salt your fields.'
-// 				}
-// 			]
-// 		};
-// 		this.idealsSelection = {
-// 			roll: {
-// 				amount: 1,
-// 				sides: 6
-// 			},
-// 			selections: [
-// 				{
-// 					id: 0,
-// 					text: 'Respect. Respect is due to me because of my position, but all people regardless of station deserve to be treated with dignity. (Good)'
-// 				},
-// 				{
-// 					id: 1,
-// 					text: 'Responsibility. It is my duty to respect the authority of those above me, just as those below me must respect mine. (Lawful)'
-// 				},
-// 				{
-// 					id: 2,
-// 					text: 'Independence. I must prove that I can handle myself without the coddling of my family. (Chaotic)'
-// 				},
-// 				{
-// 					id: 3,
-// 					text: 'Power. If I can attain more power, no one will tell me what to do. (Evil)'
-// 				},
-// 				{ id: 4, text: 'Family. Blood runs thicker than water. (Any)' },
-// 				{
-// 					id: 5,
-// 					text: 'Noble Obligation. It is my duty to protect and care for the people beneath me. (Good)'
-// 				}
-// 			]
-// 		};
-
-// 		this.bondsSelection = {
-// 			roll: {
-// 				amount: 1,
-// 				sides: 6
-// 			},
-// 			selections: [
-// 				{
-// 					id: 0,
-// 					text: 'I will face any challenge to win the approval of my family.'
-// 				},
-// 				{
-// 					id: 1,
-// 					text: "My house's alliance with another noble family must be sustained at all costs."
-// 				},
-// 				{
-// 					id: 2,
-// 					text: 'Nothing is more important that the other members of my family.'
-// 				},
-// 				{
-// 					id: 3,
-// 					text: 'I am in love with the heir of a family that my family despises.'
-// 				},
-// 				{ id: 4, text: 'My loyalty to my sovereign is unwavering.' },
-// 				{
-// 					id: 5,
-// 					text: 'The common folk must see me as a hero of the people.'
-// 				}
-// 			]
-// 		};
-
-// 		this.flawsSelection = {
-// 			roll: {
-// 				amount: 1,
-// 				sides: 6
-// 			},
-// 			selections: [
-// 				{
-// 					id: 0,
-// 					text: 'I secretly believe that everyone is beneath me.'
-// 				},
-// 				{
-// 					id: 1,
-// 					text: 'I hide a truly scandalous secret that could ruin my family forever.'
-// 				},
-// 				{
-// 					id: 2,
-// 					text: "I too often hear veiled insults and threats in every word addressed to me, and I'm quick to anger."
-// 				},
-// 				{
-// 					id: 3,
-// 					text: 'I have an insatiable desire for carnal pleasures.'
-// 				},
-// 				{ id: 4, text: 'In fact, the world does revolve around me.' },
-// 				{
-// 					id: 5,
-// 					text: 'By my words and actions, I often bring shame to my family.'
-// 				}
-// 			]
-// 		};
-// 	}
-// }
