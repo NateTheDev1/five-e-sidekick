@@ -183,7 +183,7 @@ export const Equipment: EquipmentStatic[] = [
 	},
 	{
 		id: 37,
-		name: 'Leathor Armor'
+		name: 'Leather Armor'
 	},
 	{
 		id: 38,
@@ -238,5 +238,32 @@ export const Equipment: EquipmentStatic[] = [
 	{
 		id: 49,
 		name: 'Viol'
+	},
+	{
+		id: 50,
+		name: 'Scale Mail',
+		tag: 'Armor'
+	},
+	{
+		id: 51,
+		name: 'Chain Mail',
+		tag: 'Armor'
+	},
+	{
+		id: 52,
+		name: 'Bolt'
+	},
+	{
+		id: 53,
+		name: "Priest's Pack",
+		packName: 'Priest'
+	},
+	{
+		id: 54,
+		name: 'Shield'
+	},
+	{
+		id: 55,
+		name: 'Holy Symbol'
 	}
 ];
