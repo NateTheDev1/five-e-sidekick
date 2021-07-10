@@ -111,10 +111,74 @@ export const Equipment: EquipmentStatic[] = [
 		id: 22,
 		name: 'Handaxe'
 	},
-	// TODO: More simple weapons
 	{
 		id: 23,
 		name: 'Club',
 		tag: 'Simple Melee Weapon'
+	},
+	{
+		id: 24,
+		name: 'Dagger',
+		tag: 'Simple Melee Weapon'
+	},
+	{
+		id: 25,
+		name: 'Greatclub',
+		tag: 'Simple Melee Weapon'
+	},
+	{
+		id: 26,
+		name: 'Handaxe',
+		tag: 'Simple Melee Weapon'
+	},
+	{
+		id: 27,
+		name: 'Javelin',
+		tag: 'Simple Melee Weapon'
+	},
+	{
+		id: 28,
+		name: 'Light Hammer',
+		tag: 'Simple Melee Weapon'
+	},
+	{
+		id: 29,
+		name: 'Mace',
+		tag: 'Simple Melee Weapon'
+	},
+	{
+		id: 30,
+		name: 'Quarterstaff',
+		tag: 'Simple Melee Weapon'
+	},
+	{
+		id: 31,
+		name: 'Sickle',
+		tag: 'Simple Melee Weapon'
+	},
+	{
+		id: 32,
+		name: 'Spear',
+		tag: 'Simple Melee Weapon'
+	},
+	{
+		id: 33,
+		name: 'Crossbow, light',
+		tag: 'Simple Ranged Weapon'
+	},
+	{
+		id: 34,
+		name: 'Dart',
+		tag: 'Simple Ranged Weapon'
+	},
+	{
+		id: 35,
+		name: 'Shortbow',
+		tag: 'Simple Ranged Weapon'
+	},
+	{
+		id: 36,
+		name: 'Sling',
+		tag: 'Simple Ranged Weapon'
 	}
 ];

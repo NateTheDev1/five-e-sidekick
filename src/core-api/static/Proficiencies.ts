@@ -245,5 +245,42 @@ export const Proficiencies: ProficiencyStatic[] = [
 		id: 48,
 		name: 'Nature',
 		type: 'Skill'
+	},
+	{
+		id: 49,
+		name: 'Dexterity',
+		type: 'Skill'
+	},
+	{
+		id: 50,
+		name: 'Charisma',
+		type: 'Skill'
+	},
+	{
+		id: 51,
+		name: 'Hand Crossbows',
+		type: 'Weapon'
+	},
+	{
+		id: 52,
+		name: 'Longswords',
+		type: 'Weapon'
+	},
+	{
+		id: 53,
+		name: 'Rapiers',
+		type: 'Weapon'
+	},
+	{
+		id: 54,
+		name: 'Shortswords',
+		type: 'Weapon'
+	},
+	// TODO: do the rest of the instruments
+	// https://www.dndbeyond.com/sources/basic-rules/equipment#MusicalInstrument
+	{
+		id: 55,
+		name: 'Bagpipes',
+		type: 'Tool'
 	}
 ];

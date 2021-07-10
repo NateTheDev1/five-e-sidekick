@@ -276,9 +276,13 @@ export type CharacterClass = {
 	hitPointBase: HitPointBase;
 	saves: IDArray;
 	proficiencies: IDArray;
-	proficiencySelection: ProficiencyAdditions;
+	proficiencySelection?: ProficiencyAdditions;
 	traits: ClassTraitStatic[];
 	equipmentSelection: EquipmentAdditons[];
 	equipment: EquipmentAdditionsStatic[];
 	languages: LanguageStatic[];
+	instrumentSelection?: ProficiencyAdditions;
+	skillSelection?: Omit<ProficiencyAdditions, 'from'> & {
+		from: SkillStatic[];
+	};
 };

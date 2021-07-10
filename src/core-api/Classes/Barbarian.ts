@@ -69,8 +69,59 @@ export const Barbarian: CharacterClass = {
 					choose: 1,
 					items: [
 						{
-							// TODO: More simple weapons
 							id: 23,
+							quantity: 1
+						},
+						{
+							id: 24,
+							quantity: 1
+						},
+						{
+							id: 25,
+							quantity: 1
+						},
+						{
+							id: 26,
+							quantity: 1
+						},
+						{
+							id: 27,
+							quantity: 1
+						},
+						{
+							id: 28,
+							quantity: 1
+						},
+						{
+							id: 29,
+							quantity: 1
+						},
+						{
+							id: 30,
+							quantity: 1
+						},
+						{
+							id: 31,
+							quantity: 1
+						},
+						{
+							id: 32,
+							quantity: 1
+						},
+						{
+							id: 33,
+							quantity: 1
+						},
+						{
+							id: 34,
+							quantity: 1
+						},
+						{
+							id: 35,
+							quantity: 1
+						},
+						{
+							id: 36,
 							quantity: 1
 						}
 					]
