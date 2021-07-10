@@ -335,5 +335,70 @@ export const Proficiencies: ProficiencyStatic[] = [
 		id: 67,
 		name: 'Medicine',
 		type: 'Skill'
+	},
+	{
+		id: 68,
+		name: 'Shields (Non-Metal)',
+		type: 'Armor'
+	},
+	{
+		id: 69,
+		name: 'Clubs',
+		type: 'Weapon'
+	},
+	{
+		id: 70,
+		name: 'Daggers',
+		type: 'Weapon'
+	},
+	{
+		id: 71,
+		name: 'Darts',
+		type: 'Weapon'
+	},
+	{
+		id: 72,
+		name: 'Javeins',
+		type: 'Weapon'
+	},
+	{
+		id: 73,
+		name: 'Maces',
+		type: 'Weapon'
+	},
+	{
+		id: 74,
+		name: 'Quarterstaffs',
+		type: 'Weapon'
+	},
+	{
+		id: 75,
+		name: 'Scimitars',
+		type: 'Weapon'
+	},
+	{
+		id: 76,
+		name: 'Sickles',
+		type: 'Weapon'
+	},
+	{
+		id: 77,
+		name: 'Slings',
+		type: 'Weapon'
+	},
+	{
+		id: 78,
+		name: 'Spears',
+		type: 'Weapon'
+	},
+	{
+		id: 79,
+		name: 'Herbalism Kit',
+		type: 'Tool'
+	},
+	{
+		id: 80,
+		name: 'Intelligence',
+		type: 'Saving Throw'
 	}
 ];

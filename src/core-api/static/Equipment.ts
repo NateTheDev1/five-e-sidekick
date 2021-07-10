@@ -265,5 +265,14 @@ export const Equipment: EquipmentStatic[] = [
 	{
 		id: 55,
 		name: 'Holy Symbol'
+	},
+	{
+		id: 56,
+		name: 'Wooden Shield',
+		tag: 'Armor'
+	},
+	{
+		id: 57,
+		name: 'Druidic Focus'
 	}
 ];
