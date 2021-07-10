@@ -180,5 +180,63 @@ export const Equipment: EquipmentStatic[] = [
 		id: 36,
 		name: 'Sling',
 		tag: 'Simple Ranged Weapon'
+	},
+	{
+		id: 37,
+		name: 'Leathor Armor'
+	},
+	{
+		id: 38,
+		name: "Diplomat's pack",
+		packName: 'Diplomat',
+		description:
+			'Includes a chest, 2 cases for maps and scrolls, a set of fine clothes, a bottle of ink, an ink pen, a lamp, 2 flasks of oil, 5 sheets of paper, a vial of perfume, sealing wax, and soap.'
+	},
+	{
+		id: 39,
+		name: "Entertainer's pack",
+		packName: 'Entertainer',
+		description:
+			'Includes a backpack, a bedroll, 2 costumes, 5 candles, 5 days of rations, a waterskin, and a disguise kit.'
+	},
+	{
+		id: 40,
+		name: 'Bagpipes'
+	},
+	{
+		id: 41,
+		name: 'Drum'
+	},
+	{
+		id: 42,
+		name: 'Dulcimer'
+	},
+	{
+		id: 43,
+		name: 'Flute'
+	},
+	{
+		id: 44,
+		name: 'Lute'
+	},
+	{
+		id: 45,
+		name: 'Lyre'
+	},
+	{
+		id: 46,
+		name: 'Horn'
+	},
+	{
+		id: 47,
+		name: 'Pan Flute'
+	},
+	{
+		id: 48,
+		name: 'Shawm'
+	},
+	{
+		id: 49,
+		name: 'Viol'
 	}
 ];

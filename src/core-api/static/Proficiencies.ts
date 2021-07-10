@@ -276,11 +276,54 @@ export const Proficiencies: ProficiencyStatic[] = [
 		name: 'Shortswords',
 		type: 'Weapon'
 	},
-	// TODO: do the rest of the instruments
-	// https://www.dndbeyond.com/sources/basic-rules/equipment#MusicalInstrument
 	{
 		id: 55,
 		name: 'Bagpipes',
+		type: 'Tool'
+	},
+	{
+		id: 56,
+		name: 'Drum',
+		type: 'Tool'
+	},
+	{
+		id: 57,
+		name: 'Dulcimer',
+		type: 'Tool'
+	},
+	{
+		id: 58,
+		name: 'Flute',
+		type: 'Tool'
+	},
+	{
+		id: 59,
+		name: 'Lute',
+		type: 'Tool'
+	},
+	{
+		id: 60,
+		name: 'Lyre',
+		type: 'Tool'
+	},
+	{
+		id: 61,
+		name: 'Horn',
+		type: 'Tool'
+	},
+	{
+		id: 62,
+		name: 'Pan Flute',
+		type: 'Tool'
+	},
+	{
+		id: 63,
+		name: 'Shawm',
+		type: 'Tool'
+	},
+	{
+		id: 65,
+		name: 'Viol',
 		type: 'Tool'
 	}
 ];

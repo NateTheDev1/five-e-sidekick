@@ -14,6 +14,7 @@ export class AddID {
 		let newArr: any[] = [];
 		for (let i = 0; i < this.max; i++) {
 			const newObj = { id: this.next, ...objs[i] };
+
 			this.next++;
 			this.count++;
 			newArr.push(newObj);
@@ -36,4 +37,5 @@ export class AddID {
 
 export const addID = new AddID();
 
+// https://www.textfixer.com/tools/remove-line-breaks.php
 addID.addIdToObjects([]);
