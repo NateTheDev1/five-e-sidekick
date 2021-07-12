@@ -2,7 +2,6 @@ import { api } from '..';
 import { SimpleWeaponsStatic } from '../static-data';
 import { CharacterClass } from '../types';
 
-// TODO: Rest of druid
 export const Druid: CharacterClass = {
 	name: 'Druid',
 	primaryAbility: '',

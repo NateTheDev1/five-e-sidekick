@@ -400,5 +400,15 @@ export const Proficiencies: ProficiencyStatic[] = [
 		id: 80,
 		name: 'Intelligence',
 		type: 'Saving Throw'
+	},
+	{
+		id: 81,
+		name: 'All Armor',
+		type: 'Armor'
+	},
+	{
+		id: 82,
+		name: 'Acrobatics',
+		type: 'Skill'
 	}
 ];

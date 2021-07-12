@@ -274,5 +274,41 @@ export const Equipment: EquipmentStatic[] = [
 	{
 		id: 57,
 		name: 'Druidic Focus'
+	},
+	{
+		id: 58,
+		name: 'Longbow',
+		tag: 'Martial Ranged Weapons'
+	},
+	{
+		id: 59,
+		name: 'Arrow'
+	},
+	{
+		id: 60,
+		name: 'Blowgun',
+		tag: 'Martial Ranged Weapons'
+	},
+	{
+		id: 61,
+		name: 'Crossbow, hand',
+		tag: 'Martial Ranged Weapons'
+	},
+	{
+		id: 62,
+		name: 'Crossbow, heavy',
+		tag: 'Martial Ranged Weapons'
+	},
+	{
+		id: 63,
+		name: 'Net',
+		tag: 'Martial Ranged Weapons'
+	},
+	{
+		id: 64,
+		name: "Dungeoneer's Pack",
+		description:
+			'Includes a backpack, a crowbar, a hammer, 10 pitons, 10 torches, a tinderbox, 10 days of rations, and a waterskin. The pack also has 50 feet of hempen rope strapped to the side of it.',
+		packName: 'Dungeoneer'
 	}
 ];

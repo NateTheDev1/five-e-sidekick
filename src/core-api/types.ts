@@ -176,6 +176,7 @@ export type EquipmentAdditonNano = {
 export type EquipmentAdditonMicro = {
 	items: EquipmentAdditonNano[];
 	choose?: number;
+	additional?: EquipmentAdditonNano[];
 };
 
 export type EquipmentAdditons = {

@@ -406,5 +406,113 @@ export const ClassTraits: ClassTraitStatic[] = [
 		level: 19,
 		title: 'Ability Score Improvement',
 		description: `When you reach 19th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can’t increase an ability score above 20 using this feature. Using the optional feats rule, you can forgo taking this feature to take a feat of your choice instead.`
+	},
+	{
+		id: 62,
+		level: 1,
+		title: 'Fighting Style',
+		description:
+			'You adopt a particular style of fighting as your specialty. You can’t take a Fighting Style option more than once, even if you later get to choose again.'
+	},
+	{
+		id: 63,
+		level: 1,
+		title: 'Second Wind',
+		description:
+			'You have a limited well of stamina that you can draw on to protect yourself from harm. On your turn, you can use a bonus action to regain hit points equal to 1d10 + your fighter level. Once you use this feature, you must finish a short or long rest before you can use it again.'
+	},
+	{
+		id: 64,
+		level: 2,
+		title: 'Action Surge',
+		description: `Starting at 2nd level, you can push yourself beyond your normal limits for a moment. On your turn, you can take one additional action. Once you use this feature, you must finish a short or long rest before you can use it again. Starting at 17th level, you can use it twice before a rest, but only once on the same turn.`
+	},
+	{
+		id: 65,
+		level: 3,
+		title: 'Martial Archetype',
+		description: `At 3rd level, you choose an archetype that you strive to emulate in your combat styles and techniques. Choose Champion, Battle Master, or Eldritch Knight, all detailed at the end of the class description. The archetype you choose grants you features at 3rd level and again at 7th, 10th, 15th, and 18th level.`
+	},
+	{
+		id: 66,
+		level: 4,
+		title: 'Ability Score Improvement',
+		description: `When you reach 4th level, and again at 6th, 8th, 12th, 14th, 16th, and 19th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can’t increase an ability score above 20 using this feature. Using the optional feats rule, you can forgo taking this feature to take a feat of your choice instead.`
+	},
+	{
+		id: 67,
+		level: 5,
+		title: `Extra Attack`,
+		description: `Beginning at 5th level, you can attack twice, instead of once, whenever you take the Attack action on your turn. The number of attacks increases to three when you reach 11th level in this class and to four when you reach 20th level in this class.`
+	},
+	{
+		id: 68,
+		level: 9,
+		title: 'Indomitable',
+		description: `Beginning at 9th level, you can reroll a saving throw that you fail. If you do so, you must use the new roll, and you can’t use this feature again until you finish a long rest.
+
+ You can use this feature twice between long rests starting at 13th level and three times between long rests starting at 17th level.`
+	},
+	{
+		id: 69,
+		level: 6,
+		title: 'Ability Score Improvement',
+		description: `When you reach 6th level, and again at 8th, 12th, 14th, 16th, and 19th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can’t increase an ability score above 20 using this feature.
+
+ Using the optional feats rule, you can forgo taking this feature to take a feat of your choice instead.`
+	},
+	{
+		id: 70,
+		level: 8,
+		title: 'Ability Score Improvement',
+		description: `When you reach 8th level, and again at 12th, 14th, 16th, and 19th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can’t increase an ability score above 20 using this feature.
+
+ Using the optional feats rule, you can forgo taking this feature to take a feat of your choice instead.`
+	},
+	{
+		id: 71,
+		level: 12,
+		title: 'Ability Score Improvement',
+		description: `When you reach 12th level, and again at 14th, 16th, and 19th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can’t increase an ability score above 20 using this feature.
+
+ Using the optional feats rule, you can forgo taking this feature to take a feat of your choice instead.`
+	},
+	{
+		id: 72,
+		level: 14,
+		title: 'Ability Score Improvement',
+		description: `When you reach 14th level, and again at 16th and 19th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can’t increase an ability score above 20 using this feature.
+
+ Using the optional feats rule, you can forgo taking this feature to take a feat of your choice instead. `
+	},
+	{
+		id: 73,
+		level: 16,
+		title: 'Ability Score Improvement',
+		description: `When you reach 16th level, and again at 19th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can’t increase an ability score above 20 using this feature.
+
+ Using the optional feats rule, you can forgo taking this feature to take a feat of your choice instead.`
+	},
+	{
+		id: 74,
+		level: 19,
+		title: 'Ability Score Improvement',
+		description: `When you reach 19th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can’t increase an ability score above 20 using this feature.
+
+ Using the optional feats rule, you can forgo taking this feature to take a feat of your choice instead.`
+	},
+	{
+		id: 75,
+		level: 11,
+		title: 'Extra Attack',
+		description: `Beginning at 11th level, you can attack three times, instead of twice, whenever you take the Attack action on your turn.
+
+ The number of attacks increases to four when you reach 20th level in this class.`
+	},
+	{
+		id: 76,
+		level: 20,
+		title: 'Extra Attack',
+		description: `At 20th level, you can attack four times, instead of three, whenever you take the Attack action on your turn.`
 	}
 ];
