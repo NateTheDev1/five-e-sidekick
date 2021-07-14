@@ -310,5 +310,19 @@ export const Equipment: EquipmentStatic[] = [
 		description:
 			'Includes a backpack, a crowbar, a hammer, 10 pitons, 10 torches, a tinderbox, 10 days of rations, and a waterskin. The pack also has 50 feet of hempen rope strapped to the side of it.',
 		packName: 'Dungeoneer'
+	},
+	{
+		id: 65,
+		name: "Burglar's Pack",
+		packName: 'Burglar',
+		description:
+			'Includes a backpack, a bag of 1,000 ball bearings, 10 feet of string, a bell, 5 candles, a crowbar, a hammer, 10 pitons, a hooded lantern, 2 flasks of oil, 5 days rations, a tinderbox, and a waterskin. The pack also has 50 feet of hempen rope strapped to the side of it.'
+	},
+	{
+		id: 66,
+		name: "Thieve's Tools",
+		tag: "Thieve's Tools",
+		description:
+			'This set of tools includes a small file, a set of lock picks, a small mirror mounted on a metal handle, a set of narrow-bladed scissors, and a pair of pliers. Proficiency with these tools lets you add your proficiency bonus to any ability checks you make to disarm traps or open locks.'
 	}
 ];
