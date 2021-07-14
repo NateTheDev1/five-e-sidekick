@@ -1,0 +1,43 @@
+type Character {
+	id: Int!
+	userId: Int!
+	name: String
+	avatar: String
+	race: Int
+	class: Int
+	background: Int
+	status: String
+	languages: [Int]
+	stats: String
+	hp: Int
+	maxHP: Int
+	tempHP: Int
+	deathSaves: [Boolean]
+	conditions: [Int]
+	level: Int
+	xp: Int
+	proficiencies: [Int]
+	eyes: String
+	skin: String
+	hair: String
+	backstory: String
+	height: String
+	weight: String
+	age: String
+	alignment: Int
+	gender: String
+	personalityTraits: Int
+	ideals: Int
+	bonds: Int
+	flaws: Int
+	faith: String
+	lifestyle: Int
+	backgroundFeatures: [Int]
+}
+
+type Inventory {
+	id: Int!
+	characterId: Int!
+	equipmentId: Int!
+	quantity: Int!
+}
