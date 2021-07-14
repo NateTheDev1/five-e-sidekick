@@ -9,7 +9,8 @@
 		"build": "tsc && cp -R src/schema/schemaFiles dist/schema",
 		"start": "NODE_ENV=production node dist/index.js",
 		"typecheck": "tsc -p . --noEmit true",
-		"schema": "ts-node scripts/generate-schema.ts && npm run generate-types"
+		"schema": "ts-node scripts/generate-schema.ts && npm run generate-types",
+		"gen-docs": "typedoc --out docs"
 	},
 	"author": "",
 	"license": "ISC",
@@ -47,6 +48,7 @@
 		"@types/node": "^15.12.1",
 		"concurrently": "^6.2.0",
 		"nodemon": "^2.0.7",
-		"ts-node": "^10.0.0"
+		"ts-node": "^10.0.0",
+		"typedoc": "^0.21.2"
 	}
 }
