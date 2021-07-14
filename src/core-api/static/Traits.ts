@@ -514,5 +514,345 @@ export const ClassTraits: ClassTraitStatic[] = [
 		level: 20,
 		title: 'Extra Attack',
 		description: `At 20th level, you can attack four times, instead of three, whenever you take the Attack action on your turn.`
+	},
+	//
+	{
+		id: 77,
+		level: 1,
+		title: 'Unarmored Defense',
+		description: `Beginning at 1st level, while you are wearing no armor and not wielding a shield, your AC equals 10 + your Dexterity modifier + your Wisdom modifier.`
+	},
+	{
+		id: 78,
+		level: 1,
+		title: 'Martial Arts',
+		description: `At 1st level, your practice of martial arts gives you mastery of combat styles that use unarmed strikes and monk weapons, which are shortswords and any simple melee weapons that don’t have the two-handed or heavy property.
+
+	You gain the following benefits while you are unarmed or wielding only monk weapons and you aren’t wearing armor or wielding a shield:
+   
+	You can use Dexterity instead of Strength for the attack and damage rolls of your unarmed strikes and monk weapons. You can roll a d4 in place of the normal damage of your unarmed strike or monk weapon. This die changes as you gain monk levels, as shown in the Martial Arts column of the Monk table. When you use the Attack action with an unarmed strike or a monk weapon on your turn, you can make one unarmed strike as a bonus action. For example, if you take the Attack action and attack with a quarterstaff, you can also make an unarmed strike as a bonus action, assuming you haven’t already taken a bonus action this turn. Certain monasteries use specialized forms of the monk weapons. For example, you might use a club that is two lengths of wood connected by a short chain (called a nunchaku) or a sickle with a shorter, straighter blade (called a kama). Whatever name you use for a monk weapon, you can use the game statistics provided for the weapon in the Weapons section.`
+	},
+	{
+		id: 79,
+		level: 2,
+		title: 'Ki',
+		description: `Starting at 2nd level, your training allows you to harness the mystic energy of ki. Your access to this energy is represented by a number of ki points. Your monk level determines the number of points you have, as shown in the Ki Points column of the Monk table.
+   
+	You can spend these points to fuel various ki features. You start knowing three such features: Flurry of Blows, Patient Defense, and Step of the Wind. You learn more ki features as you gain levels in this class.
+   
+	When you spend a ki point, it is unavailable until you finish a short or long rest, at the end of which you draw all of your expended ki back into yourself. You must spend at least 30 minutes of the rest meditating to regain your ki points.
+   
+	Some of your ki features require your target to make a saving throw to resist the feature’s effects. The saving throw DC is calculated as follows:
+   
+	Ki save DC = 8 + your proficiency bonus + your Wisdom modifier
+   
+	Flurry of Blows Immediately after you take the Attack action on your turn, you can spend 1 ki point to make two unarmed strikes as a bonus action.
+   
+	Patient Defense You can spend 1 ki point to take the Dodge action as a bonus action on your turn.
+   
+	Step of the Wind You can spend 1 ki point to take the Disengage or Dash action as a bonus action on your turn, and your jump distance is doubled for the turn.`
+	},
+	{
+		id: 80,
+		level: 2,
+		title: 'Unarmored Movement',
+		description: `Starting at 2nd level, your speed increases by 10 feet while you are not wearing armor or wielding a shield. This bonus increases when you reach certain monk levels, as shown in the Monk table.
+   
+	At 9th level, you gain the ability to move along vertical surfaces and across liquids on your turn without falling during the move.`
+	},
+	{
+		id: 81,
+		level: 3,
+		title: 'Monastic Tradition',
+		description: `When you reach 3rd level, you commit yourself to a monastic tradition: the Way of the Open Hand, detailed at the end of the class description or one from another source. Your tradition grants you features at 3rd level and again at 6th, 11th, and 17th level.`
+	},
+	{
+		id: 82,
+		level: 3,
+		title: 'Deflect Missiles',
+		description: `Starting at 3rd level, you can use your reaction to deflect or catch the missile when you are hit by a ranged weapon attack. When you do so, the damage you take from the attack is reduced by 1d10 + your Dexterity modifier + your monk level. If you reduce the damage to 0, you can catch the missile if it is small enough for you to hold in one hand and you have at least one hand free. If you catch a missile in this way, you can spend 1 ki point to make a ranged attack with the weapon or piece of ammunition you just caught, as part of the same reaction. You make this attack with proficiency, regardless of your weapon proficiencies, and the missile counts as a monk weapon for the attack, which has a normal range of 20 feet and a long range of 60 feet.`
+	},
+	{
+		id: 83,
+		level: 4,
+		title: 'Ability Score Improvement',
+		description: `When you reach 4th level, and again at 8th, 12th, 16th, and 19th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can’t increase an ability score above 20 using this feature.
+   
+	Using the optional feats rule, you can forgo taking this feature to take a feat of your choice instead.`
+	},
+	{
+		id: 84,
+		level: 4,
+		title: 'Slow Fall',
+		description: `Beginning at 4th level, you can use your reaction when you fall to reduce any falling damage you take by an amount equal to five times your monk level.`
+	},
+	{
+		id: 85,
+		level: 5,
+		title: 'Extra Attack',
+		description: `Beginning at 5th level, you can attack twice, instead of once, whenever you take the Attack action on your turn.`
+	},
+	{
+		id: 86,
+		level: 5,
+		title: 'Stunning Strike',
+		description: `Starting at 5th level, you can interfere with the flow of ki in an opponent’s body. When you hit another creature with a melee weapon attack, you can spend 1 ki point to attempt a stunning strike. The target must succeed on a Constitution saving throw or be stunned until the end of your next turn.`
+	},
+	{
+		id: 87,
+		level: 6,
+		title: 'Ki-Empowered Strikes',
+		description: `Starting at 6th level, your unarmed strikes count as magical for the purpose of overcoming resistance and immunity to nonmagical attacks and damage.`
+	},
+	{
+		id: 88,
+		level: 7,
+		title: 'Evasion',
+		description: `At 7th level, your instinctive agility lets you dodge out of the way of certain area effects, such as a blue dragon’s lightning breath or a fireball spell. When you are subjected to an effect that allows you to make a Dexterity saving throw to take only half damage, you instead take no damage if you succeed on the saving throw, and only half damage if you fail.`
+	},
+	{
+		id: 89,
+		level: 7,
+		title: 'Stillness of Mind',
+		description: `Starting at 7th level, you can use your action to end one effect on yourself that is causing you to be charmed or frightened.`
+	},
+	{
+		id: 90,
+		level: 10,
+		title: 'Purity of Body',
+		description: `At 10th level, your mastery of the ki flowing through you makes you immune to disease and poison.`
+	},
+	{
+		id: 1,
+		level: 13,
+		title: 'Tongue of the Sun and Moon',
+		description: `Starting at 13th level, you learn to touch the ki of other minds so that you understand all spoken languages. Moreover, any creature that can understand a language can understand what you say.`
+	},
+	{
+		id: 91,
+		level: 14,
+		title: 'Diamond Soul',
+		description: `Beginning at 14th level, your mastery of ki grants you proficiency in all saving throws. Additionally, whenever you make a saving throw and fail, you can spend 1 ki point to reroll it and take the second result.`
+	},
+	{
+		id: 92,
+		level: 15,
+		title: 'Timeless Body',
+		description: `At 15th level, your ki sustains you so that you suffer none of the frailty of old age, and you can’t be aged magically. You can still die of old age, however. In addition, you no longer need food or water.`
+	},
+	{
+		id: 93,
+		level: 18,
+		title: 'Empty Body',
+		description: `Beginning at 18th level, you can use your action to spend 4 ki points to become invisible for 1 minute. During that time, you also have resistance to all damage but force damage.
+   
+	Additionally, you can spend 8 ki points to cast the astral projection spell, without needing material components. When you do so, you can’t take any other creatures with you.`
+	},
+	{
+		id: 94,
+		level: 20,
+		title: 'Perfect Self',
+		description: `At 20th level, when you roll for initiative and have no ki points remaining, you regain 4 ki points.`
+	},
+	{
+		id: 95,
+		level: 9,
+		title: 'Unarmored Movement Improvement',
+		description: `At 9th level, you gain the ability to move along vertical surfaces and across liquids on your turn without falling during your move.`
+	},
+	{
+		id: 96,
+		level: 8,
+		title: 'Ability Score Improvement',
+		description: `When you reach 8th level, and again at 12th, 16th, and 19th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can’t increase an ability score above 20 using this feature. Using the optional feats rule, you can forgo taking this feature to take a feat of your choice instead.`
+	},
+	{
+		id: 97,
+		level: 12,
+		title: 'Ability Score Improvement',
+		description: `When you reach 12th level, and again at 16th and 19th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can’t increase an ability score above 20 using this feature. Using the optional feats rule, you can forgo taking this feature to take a feat of your choice instead.`
+	},
+	{
+		id: 98,
+		level: 16,
+		title: 'Ability Score Improvement',
+		description: `When you reach 16th level, and again at 19th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can’t increase an ability score above 20 using this feature.
+   
+	Using the optional feats rule, you can forgo taking this feature to take a feat of your choice instead.`
+	},
+	{
+		id: 100,
+		level: 19,
+		title: 'Ability Score Improvement',
+		description: `When you reach 19th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can’t increase an ability score above 20 using this feature.
+   
+	Using the optional feats rule, you can forgo taking this feature to take a feat of your choice instead.`
+	},
+	{
+		id: 101,
+		level: 6,
+		title: 'Unarmored Movement',
+		description: `At 6th level, your Unarmored Speed speed bonus increases to 15 feet while you are not wearing armor or wielding a shield.`
+	},
+	{
+		id: 102,
+		level: 10,
+		title: 'Unarmored Movement',
+		description: `At 10th level, your Unarmored Speed speed bonus increases to 20 feet while you are not wearing armor or wielding a shield.`
+	},
+	{
+		id: 103,
+		level: 14,
+		title: 'Unarmored Movement',
+		description: `At 14th level, your Unarmored Speed speed bonus increases to 25 feet while you are not wearing armor or wielding a shield.`
+	},
+	{
+		id: 104,
+		level: 18,
+		title: 'Unarmored Movement',
+		description: `At 18th level, your Unarmored Speed speed bonus increases to 30 feet while you are not wearing armor or wielding a shield.`
+	},
+	{
+		id: 105,
+		level: 1,
+		title: 'Divine Sense',
+		description: `The presence of strong evil registers on your senses like a noxious odor, and powerful good rings like heavenly music in your ears. As an action, you can open your awareness to detect such forces. Until the end of your next turn, you know the location of any celestial, fiend, or undead within 60 feet of you that is not behind total cover. You know the type (celestial, fiend, or undead) of any being whose presence you sense, but not its identity (the vampire Count Strahd von Zarovich, for instance). Within the same radius, you also detect the presence of any place or object that has been consecrated or desecrated, as with the hallow spell. You can use this feature a number of times equal to 1 + your Charisma modifier. When you finish a long rest, you regain all expended uses.`
+	},
+	{
+		id: 106,
+		level: 1,
+		title: 'Lay on Hands',
+		description: `Your blessed touch can heal wounds. You have a pool of healing power that replenishes when you take a long rest. With that pool, you can restore a total number of hit points equal to your paladin level × 5.
+
+ As an action, you can touch a creature and draw power from the pool to restore a number of hit points to that creature, up to the maximum amount remaining in your pool.
+
+ Alternatively, you can expend 5 hit points from your pool of healing to cure the target of one disease or neutralize one poison affecting it. You can cure multiple diseases and neutralize multiple poisons with a single use of Lay on Hands, expending hit points separately for each one.
+
+ This feature has no effect on undead and constructs.`
+	},
+	{
+		id: 107,
+		level: 2,
+		title: 'Fighting Style',
+		description:
+			'At 2nd level, you adopt a style of fighting as your specialty. Choose one of the following options. You can’t take a Fighting Style option more than once, even if you later get to choose again.'
+	},
+	{
+		id: 108,
+		level: 2,
+		title: 'Spellcasting',
+		description: `By 2nd level, you have learned to draw on divine magic through meditation and prayer to cast spells as a cleric does. See Spells Rules for the general rules of spellcasting and the Spells Listing for the paladin spell list.
+
+ Preparing and Casting Spells The Paladin table shows how many spell slots you have to cast your paladin spells. To cast one of your paladin spells of 1st level or higher, you must expend a slot of the spell’s level or higher. You regain all expended spell slots when you finish a long rest.
+
+ You prepare the list of paladin spells that are available for you to cast, choosing from the paladin spell list. When you do so, choose a number of paladin spells equal to your Charisma modifier + half your paladin level, rounded down (minimum of one spell). The spells must be of a level for which you have spell slots.
+
+ For example, if you are a 5th-level paladin, you have four 1st-level and two 2nd-level spell slots. With a Charisma of 14, your list of prepared spells can include four spells of 1st or 2nd level, in any combination. If you prepare the 1st-level spell cure wounds, you can cast it using a 1st-level or a 2nd-level slot. Casting the spell doesn’t remove it from your list of prepared spells.
+
+ You can change your list of prepared spells when you finish a long rest. Preparing a new list of paladin spells requires time spent in prayer and meditation: at least 1 minute per spell level for each spell on your list.
+
+ Spellcasting Ability Charisma is your spellcasting ability for your paladin spells, since their power derives from the strength of your convictions. You use your Charisma whenever a spell refers to your spellcasting ability. In addition, you use your Charisma modifier when setting the saving throw DC for a paladin spell you cast and when making an attack roll with one.
+
+ Spell save DC = 8 + your proficiency bonus + your Charisma modifier
+
+ Spell attack modifier = your proficiency bonus + your Charisma modifier
+
+ Spellcasting Focus You can use a holy symbol (see the Adventuring Gear section) as a spellcasting focus for your paladin spells.`
+	},
+	{
+		id: 110,
+		level: 2,
+		title: 'Divine Smite',
+		description: `Starting at 2nd level, when you hit a creature with a melee weapon attack, you can expend one spell slot to deal radiant damage to the target, in addition to the weapon’s damage. The extra damage is 2d8 for a 1st-level spell slot, plus 1d8 for each spell level higher than 1st, to a maximum of 5d8. The damage increases by 1d8 if the target is an undead or a fiend, to a maximum of 6d8.`
+	},
+	{
+		id: 111,
+		level: 3,
+		title: 'Divine Health',
+		description: `By 3rd level, the divine magic flowing through you makes you immune to disease.`
+	},
+	{
+		id: 112,
+		level: 3,
+		title: 'Sacred Oath',
+		description: `When you reach 3rd level, you swear the oath that binds you as a paladin forever. Up to this time you have been in a preparatory stage, committed to the path but not yet sworn to it. Now you choose the Oath of Devotion detailed at the end of the class description or one from another source.
+
+ Your choice grants you features at 3rd level and again at 7th, 15th, and 20th level. Those features include oath spells and the Channel Divinity feature.
+
+ Oath Spells Each oath has a list of associated spells. You gain access to these spells at the levels specified in the oath description. Once you gain access to an oath spell, you always have it prepared. Oath spells don’t count against the number of spells you can prepare each day.
+
+ If you gain an oath spell that doesn’t appear on the paladin spell list, the spell is nonetheless a paladin spell for you.
+
+ Channel Divinity Your oath allows you to channel divine energy to fuel magical effects. Each Channel Divinity option provided by your oath explains how to use it.
+
+ When you use your Channel Divinity, you choose which option to use. You must then finish a short or long rest to use your Channel Divinity again.
+
+ Some Channel Divinity effects require saving throws. When you use such an effect from this class, the DC equals your paladin spell save DC.`
+	},
+	{
+		id: 113,
+		level: 4,
+		title: 'Ability Score Improvement',
+		description: `When you reach 4th level, and again at 8th, 12th, 16th, and 19th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can’t increase an ability score above 20 using this feature. Using the optional feats rule, you can forgo taking this feature to take a feat of your choice instead.`
+	},
+	{
+		id: 114,
+		level: 5,
+		title: 'Extra Attack',
+		description: `Beginning at 5th level, you can attack twice, instead of once, whenever you take the Attack action on your turn.`
+	},
+	{
+		id: 115,
+		level: 6,
+		title: 'Aura of Protection',
+		description: `Starting at 6th level, whenever you or a friendly creature within 10 feet of you must make a saving throw, the creature gains a bonus to the saving throw equal to your Charisma modifier (with a minimum bonus of +1). You must be conscious to grant this bonus. At 18th level, the range of this aura increases to 30 feet.`
+	},
+	{
+		id: 116,
+		level: 10,
+		title: 'Aura of Courage',
+		description: `Starting at 10th level, you and friendly creatures within 10 feet of you can’t be frightened while you are conscious. At 18th level, the range of this aura increases to 30 feet`
+	},
+	{
+		id: 117,
+		level: 11,
+		title: 'Improved Divine Smite',
+		description: `By 11th level, you are so suffused with righteous might that all your melee weapon strikes carry divine power with them. Whenever you hit a creature with a melee weapon, the creature takes an extra 1d8 radiant damage.`
+	},
+	{
+		id: 118,
+		level: 14,
+		title: 'Cleansing Touch',
+		description: `Beginning at 14th level, you can use your action to end one spell on yourself or on one willing creature that you touch. You can use this feature a number of times equal to your Charisma modifier (a minimum of once). You regain expended uses when you finish a long rest.`
+	},
+	{
+		id: 119,
+		level: 18,
+		title: 'Aura Improvements',
+		description: `At 18th level, the range of your auras increase to 30 feet.`
+	},
+	{
+		id: 120,
+		level: 8,
+		title: 'Ability Score Improvement',
+		description: `When you reach 8th level, and again at 12th, 16th, and 19th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can’t increase an ability score above 20 using this feature. Using the optional feats rule, you can forgo taking this feature to take a feat of your choice instead.`
+	},
+	{
+		id: 121,
+		level: 12,
+		title: 'Ability Score Improvement',
+		description: `When you reach 12th level, and again at 16th and 19th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can’t increase an ability score above 20 using this feature. Using the optional feats rule, you can forgo taking this feature to take a feat of your choice instead.`
+	},
+	{
+		id: 122,
+		level: 16,
+		title: 'Ability Score Improvement',
+		description: `When you reach 16th level, and again at 19th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can’t increase an ability score above 20 using this feature. Using the optional feats rule, you can forgo taking this feature to take a feat of your choice instead.`
+	},
+	{
+		id: 123,
+		level: 19,
+		title: 'Ability Score Improvement',
+		description: `When you reach 19th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can’t increase an ability score above 20 using this feature. Using the optional feats rule, you can forgo taking this feature to take a feat of your choice instead.`
 	}
 ];

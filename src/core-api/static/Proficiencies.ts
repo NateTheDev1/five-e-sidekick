@@ -254,7 +254,7 @@ export const Proficiencies: ProficiencyStatic[] = [
 	{
 		id: 50,
 		name: 'Charisma',
-		type: 'Skill'
+		type: 'Saving Throw'
 	},
 	{
 		id: 51,

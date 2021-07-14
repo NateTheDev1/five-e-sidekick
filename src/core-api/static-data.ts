@@ -679,3 +679,29 @@ export const SimpleWeaponsStatic: EquipmentAdditonNano[] = [
 		quantity: 1
 	}
 ];
+
+export const MartialWeaponsStatic: EquipmentAdditonNano[] = [
+	{ id: 4, quantity: 1 },
+	{ id: 5, quantity: 1 },
+	{ id: 6, quantity: 1 },
+	{ id: 7, quantity: 1 },
+	{ id: 8, quantity: 1 },
+	{ id: 9, quantity: 1 },
+	{ id: 10, quantity: 1 },
+	{ id: 11, quantity: 1 },
+	{ id: 12, quantity: 1 },
+	{ id: 13, quantity: 1 },
+	{ id: 14, quantity: 1 },
+	{ id: 15, quantity: 1 },
+	{ id: 16, quantity: 1 },
+	{ id: 17, quantity: 1 },
+	{ id: 18, quantity: 1 },
+	{ id: 19, quantity: 1 },
+	{ id: 20, quantity: 1 },
+	{ id: 21, quantity: 1 },
+	{ id: 58, quantity: 1 },
+	{ id: 60, quantity: 1 },
+	{ id: 61, quantity: 1 },
+	{ id: 62, quantity: 1 },
+	{ id: 63, quantity: 1 }
+];

@@ -166,6 +166,7 @@ export type ProficiencyAdditions = {
 	title: string;
 	choose: number;
 	from: ProficiencyStatic[];
+	additional?: ProficiencyAdditions[];
 };
 
 export type EquipmentAdditonNano = {
