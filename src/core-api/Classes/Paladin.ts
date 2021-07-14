@@ -1,5 +1,5 @@
 import { api } from '..';
-import { MartialWeaponsStatic, SimpleWeaponsStatic } from '../static-data';
+import { MartialWeaponsStatic, SimpleMeleeWeaponsStatic } from '../static-data';
 import { CharacterClass } from '../types';
 
 export const Paladin: CharacterClass = {
@@ -47,7 +47,7 @@ export const Paladin: CharacterClass = {
 			choose: 1,
 			from: [
 				{ items: [{ quantity: 5, id: 2 }] },
-				{ items: [...SimpleWeaponsStatic], choose: 1 }
+				{ items: [...SimpleMeleeWeaponsStatic], choose: 1 }
 			]
 		},
 		{

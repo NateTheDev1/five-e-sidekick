@@ -1,5 +1,5 @@
 import { api } from '..';
-import { SimpleWeaponsStatic } from '../static-data';
+import { SimpleMeleeWeaponsStatic, SimpleWeaponsStatic } from '../static-data';
 import { CharacterClass } from '../types';
 
 export const Druid: CharacterClass = {
@@ -50,7 +50,7 @@ export const Druid: CharacterClass = {
 			choose: 1,
 			from: [
 				{ items: [{ id: 16, quantity: 1 }] },
-				{ choose: 1, items: [...SimpleWeaponsStatic] }
+				{ choose: 1, items: [...SimpleMeleeWeaponsStatic] }
 			]
 		}
 	]
