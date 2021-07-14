@@ -1,3 +1,6 @@
+import { characterStep } from './mutation/character/characterStep';
+import { finalizeCharacter } from './mutation/character/finalizeCharacter';
+import { initializeCharacter } from './mutation/character/initializeCharacter';
 import { addSoundboardLink } from './mutation/soundboard/addSoundboardLink';
 import { createSoundboard } from './mutation/soundboard/createSoundboard';
 import { deleteSoundboard } from './mutation/soundboard/deleteSoundboard';
@@ -31,6 +34,9 @@ export const resolvers: Resolvers.Resolvers = {
 		addSoundboardLink: addSoundboardLink,
 		deleteSoundboardLink: deleteSoundboardLink,
 		deleteSoundboard: deleteSoundboard,
-		waitListSignup: waitListSignup
+		waitListSignup: waitListSignup,
+		initializeCharacter: initializeCharacter,
+		finalizeCharacter: finalizeCharacter,
+		characterStep: characterStep
 	}
 };

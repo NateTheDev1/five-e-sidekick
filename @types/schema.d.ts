@@ -48,6 +48,53 @@ interface Character {
   faith?: Maybe<Scalars['String']>;
   lifestyle?: Maybe<Scalars['Int']>;
   backgroundFeatures?: Maybe<Array<Maybe<Scalars['Int']>>>;
+  characterStep?: Maybe<Scalars['Int']>;
+}
+
+interface CharacterInput {
+  name?: Maybe<Scalars['String']>;
+  avatar?: Maybe<Scalars['String']>;
+  race?: Maybe<Scalars['Int']>;
+  class?: Maybe<Scalars['Int']>;
+  background?: Maybe<Scalars['Int']>;
+  status?: Maybe<Scalars['String']>;
+  languages?: Maybe<Array<Maybe<Scalars['Int']>>>;
+  stats?: Maybe<Scalars['String']>;
+  hp?: Maybe<Scalars['Int']>;
+  maxHP?: Maybe<Scalars['Int']>;
+  tempHP?: Maybe<Scalars['Int']>;
+  deathSaves?: Maybe<Array<Maybe<Scalars['Boolean']>>>;
+  conditions?: Maybe<Array<Maybe<Scalars['Int']>>>;
+  level?: Maybe<Scalars['Int']>;
+  xp?: Maybe<Scalars['Int']>;
+  proficiencies?: Maybe<Array<Maybe<Scalars['Int']>>>;
+  eyes?: Maybe<Scalars['String']>;
+  skin?: Maybe<Scalars['String']>;
+  hair?: Maybe<Scalars['String']>;
+  backstory?: Maybe<Scalars['String']>;
+  height?: Maybe<Scalars['String']>;
+  weight?: Maybe<Scalars['String']>;
+  age?: Maybe<Scalars['String']>;
+  alignment?: Maybe<Scalars['Int']>;
+  gender?: Maybe<Scalars['String']>;
+  personalityTraits?: Maybe<Scalars['Int']>;
+  ideals?: Maybe<Scalars['Int']>;
+  bonds?: Maybe<Scalars['Int']>;
+  flaws?: Maybe<Scalars['Int']>;
+  faith?: Maybe<Scalars['String']>;
+  lifestyle?: Maybe<Scalars['Int']>;
+  backgroundFeatures?: Maybe<Array<Maybe<Scalars['Int']>>>;
+  characterStep?: Maybe<Scalars['Int']>;
+}
+
+interface CharacterStepInput {
+  characterId: Scalars['Int'];
+  character: CharacterInput;
+}
+
+interface InitCharacterInput {
+  userId: Scalars['Int'];
+  character: CharacterInput;
 }
 
 interface Inventory {
@@ -65,6 +112,9 @@ interface LoginInput {
 
 interface Mutation {
   __typename?: 'Mutation';
+  initializeCharacter: Character;
+  characterStep: Character;
+  finalizeCharacter: Character;
   createSoundboard: Soundboard;
   deleteSoundboard: Scalars['Boolean'];
   deleteSoundboardLink: Scalars['Boolean'];
@@ -73,6 +123,21 @@ interface Mutation {
   login: User;
   appleLogin: User;
   waitListSignup: Scalars['Boolean'];
+}
+
+
+interface MutationInitializeCharacterArgs {
+  input: InitCharacterInput;
+}
+
+
+interface MutationCharacterStepArgs {
+  input: CharacterStepInput;
+}
+
+
+interface MutationFinalizeCharacterArgs {
+  input: CharacterStepInput;
 }
 
 
