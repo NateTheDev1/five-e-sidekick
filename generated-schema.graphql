@@ -1,10 +1,15 @@
 type Query {
+  getCharacter(id: Int!): Character!
+  getInventory(characterId: Int!): Inventory!
   getSoundboards: [Soundboard]!
   getSoundboard(soundboardId: Int!): Soundboard!
   getUser(id: Int!): User!
 }
 
 type Mutation {
+  initializeCharacter(input: InitCharacterInput!): Character!
+  characterStep(input: CharacterStepInput!): Character!
+  finalizeCharacter(input: CharacterStepInput!): Character!
   createSoundboard(title: String!): Soundboard!
   deleteSoundboard(soundboardId: Int!): Boolean!
   deleteSoundboardLink(linkId: Int!): Boolean!
@@ -13,6 +18,97 @@ type Mutation {
   login(credentials: LoginInput!): User!
   appleLogin(email: String!): User!
   waitListSignup(email: String!): Boolean!
+}
+
+input CharacterStepInput {
+  characterId: Int!
+  character: CharacterInput!
+}
+
+input InitCharacterInput {
+  userId: Int!
+  character: CharacterInput!
+}
+
+input CharacterInput {
+  name: String
+  avatar: String
+  race: Int
+  class: Int
+  background: Int
+  status: String
+  languages: [Int]
+  stats: String
+  hp: Int
+  maxHP: Int
+  tempHP: Int
+  deathSaves: [Boolean]
+  conditions: [Int]
+  level: Int
+  xp: Int
+  proficiencies: [Int]
+  eyes: String
+  skin: String
+  hair: String
+  backstory: String
+  height: String
+  weight: String
+  age: String
+  alignment: Int
+  gender: String
+  personalityTraits: Int
+  ideals: Int
+  bonds: Int
+  flaws: Int
+  faith: String
+  lifestyle: Int
+  backgroundFeatures: [Int]
+  characterStep: Int
+}
+
+type Character {
+  id: Int!
+  userId: Int!
+  name: String
+  avatar: String
+  race: Int
+  class: Int
+  background: Int
+  status: String
+  languages: [Int]
+  stats: String
+  hp: Int
+  maxHP: Int
+  tempHP: Int
+  deathSaves: [Boolean]
+  conditions: [Int]
+  level: Int
+  xp: Int
+  proficiencies: [Int]
+  eyes: String
+  skin: String
+  hair: String
+  backstory: String
+  height: String
+  weight: String
+  age: String
+  alignment: Int
+  gender: String
+  personalityTraits: Int
+  ideals: Int
+  bonds: Int
+  flaws: Int
+  faith: String
+  lifestyle: Int
+  backgroundFeatures: [Int]
+  characterStep: Int
+}
+
+type Inventory {
+  id: Int!
+  characterId: Int!
+  equipmentId: Int!
+  quantity: Int!
 }
 
 input SoundboardLinkInput {

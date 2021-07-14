@@ -15,6 +15,99 @@ interface Scalars {
   Float: number;
 }
 
+interface Character {
+  __typename?: 'Character';
+  id: Scalars['Int'];
+  userId: Scalars['Int'];
+  name?: Maybe<Scalars['String']>;
+  avatar?: Maybe<Scalars['String']>;
+  race?: Maybe<Scalars['Int']>;
+  class?: Maybe<Scalars['Int']>;
+  background?: Maybe<Scalars['Int']>;
+  status?: Maybe<Scalars['String']>;
+  languages?: Maybe<Array<Maybe<Scalars['Int']>>>;
+  stats?: Maybe<Scalars['String']>;
+  hp?: Maybe<Scalars['Int']>;
+  maxHP?: Maybe<Scalars['Int']>;
+  tempHP?: Maybe<Scalars['Int']>;
+  deathSaves?: Maybe<Array<Maybe<Scalars['Boolean']>>>;
+  conditions?: Maybe<Array<Maybe<Scalars['Int']>>>;
+  level?: Maybe<Scalars['Int']>;
+  xp?: Maybe<Scalars['Int']>;
+  proficiencies?: Maybe<Array<Maybe<Scalars['Int']>>>;
+  eyes?: Maybe<Scalars['String']>;
+  skin?: Maybe<Scalars['String']>;
+  hair?: Maybe<Scalars['String']>;
+  backstory?: Maybe<Scalars['String']>;
+  height?: Maybe<Scalars['String']>;
+  weight?: Maybe<Scalars['String']>;
+  age?: Maybe<Scalars['String']>;
+  alignment?: Maybe<Scalars['Int']>;
+  gender?: Maybe<Scalars['String']>;
+  personalityTraits?: Maybe<Scalars['Int']>;
+  ideals?: Maybe<Scalars['Int']>;
+  bonds?: Maybe<Scalars['Int']>;
+  flaws?: Maybe<Scalars['Int']>;
+  faith?: Maybe<Scalars['String']>;
+  lifestyle?: Maybe<Scalars['Int']>;
+  backgroundFeatures?: Maybe<Array<Maybe<Scalars['Int']>>>;
+  characterStep?: Maybe<Scalars['Int']>;
+}
+
+interface CharacterInput {
+  name?: Maybe<Scalars['String']>;
+  avatar?: Maybe<Scalars['String']>;
+  race?: Maybe<Scalars['Int']>;
+  class?: Maybe<Scalars['Int']>;
+  background?: Maybe<Scalars['Int']>;
+  status?: Maybe<Scalars['String']>;
+  languages?: Maybe<Array<Maybe<Scalars['Int']>>>;
+  stats?: Maybe<Scalars['String']>;
+  hp?: Maybe<Scalars['Int']>;
+  maxHP?: Maybe<Scalars['Int']>;
+  tempHP?: Maybe<Scalars['Int']>;
+  deathSaves?: Maybe<Array<Maybe<Scalars['Boolean']>>>;
+  conditions?: Maybe<Array<Maybe<Scalars['Int']>>>;
+  level?: Maybe<Scalars['Int']>;
+  xp?: Maybe<Scalars['Int']>;
+  proficiencies?: Maybe<Array<Maybe<Scalars['Int']>>>;
+  eyes?: Maybe<Scalars['String']>;
+  skin?: Maybe<Scalars['String']>;
+  hair?: Maybe<Scalars['String']>;
+  backstory?: Maybe<Scalars['String']>;
+  height?: Maybe<Scalars['String']>;
+  weight?: Maybe<Scalars['String']>;
+  age?: Maybe<Scalars['String']>;
+  alignment?: Maybe<Scalars['Int']>;
+  gender?: Maybe<Scalars['String']>;
+  personalityTraits?: Maybe<Scalars['Int']>;
+  ideals?: Maybe<Scalars['Int']>;
+  bonds?: Maybe<Scalars['Int']>;
+  flaws?: Maybe<Scalars['Int']>;
+  faith?: Maybe<Scalars['String']>;
+  lifestyle?: Maybe<Scalars['Int']>;
+  backgroundFeatures?: Maybe<Array<Maybe<Scalars['Int']>>>;
+  characterStep?: Maybe<Scalars['Int']>;
+}
+
+interface CharacterStepInput {
+  characterId: Scalars['Int'];
+  character: CharacterInput;
+}
+
+interface InitCharacterInput {
+  userId: Scalars['Int'];
+  character: CharacterInput;
+}
+
+interface Inventory {
+  __typename?: 'Inventory';
+  id: Scalars['Int'];
+  characterId: Scalars['Int'];
+  equipmentId: Scalars['Int'];
+  quantity: Scalars['Int'];
+}
+
 interface LoginInput {
   email: Scalars['String'];
   password: Scalars['String'];
@@ -22,6 +115,9 @@ interface LoginInput {
 
 interface Mutation {
   __typename?: 'Mutation';
+  initializeCharacter: Character;
+  characterStep: Character;
+  finalizeCharacter: Character;
   createSoundboard: Soundboard;
   deleteSoundboard: Scalars['Boolean'];
   deleteSoundboardLink: Scalars['Boolean'];
@@ -30,6 +126,21 @@ interface Mutation {
   login: User;
   appleLogin: User;
   waitListSignup: Scalars['Boolean'];
+}
+
+
+interface MutationInitializeCharacterArgs {
+  input: InitCharacterInput;
+}
+
+
+interface MutationCharacterStepArgs {
+  input: CharacterStepInput;
+}
+
+
+interface MutationFinalizeCharacterArgs {
+  input: CharacterStepInput;
 }
 
 
@@ -74,9 +185,21 @@ interface MutationWaitListSignupArgs {
 
 interface Query {
   __typename?: 'Query';
+  getCharacter: Character;
+  getInventory: Inventory;
   getSoundboards: Array<Maybe<Soundboard>>;
   getSoundboard: Soundboard;
   getUser: User;
+}
+
+
+interface QueryGetCharacterArgs {
+  id: Scalars['Int'];
+}
+
+
+interface QueryGetInventoryArgs {
+  characterId: Scalars['Int'];
 }
 
 
@@ -204,11 +327,16 @@ export type DirectiveResolverFn<TResult = {}, TParent = {}, TContext = {}, TArgs
 
 /** Mapping between all available schema types and the resolvers types */
 export type ResolversTypes = {
-  LoginInput: LoginInput;
-  String: ResolverTypeWrapper<Scalars['String']>;
-  Mutation: ResolverTypeWrapper<{}>;
-  Boolean: ResolverTypeWrapper<Scalars['Boolean']>;
+  Character: ResolverTypeWrapper<Character>;
   Int: ResolverTypeWrapper<Scalars['Int']>;
+  String: ResolverTypeWrapper<Scalars['String']>;
+  Boolean: ResolverTypeWrapper<Scalars['Boolean']>;
+  CharacterInput: CharacterInput;
+  CharacterStepInput: CharacterStepInput;
+  InitCharacterInput: InitCharacterInput;
+  Inventory: ResolverTypeWrapper<Inventory>;
+  LoginInput: LoginInput;
+  Mutation: ResolverTypeWrapper<{}>;
   Query: ResolverTypeWrapper<{}>;
   SignupInput: SignupInput;
   Soundboard: ResolverTypeWrapper<Soundboard>;
@@ -219,11 +347,16 @@ export type ResolversTypes = {
 
 /** Mapping between all available schema types and the resolvers parents */
 export type ResolversParentTypes = {
-  LoginInput: LoginInput;
-  String: Scalars['String'];
-  Mutation: {};
-  Boolean: Scalars['Boolean'];
+  Character: Character;
   Int: Scalars['Int'];
+  String: Scalars['String'];
+  Boolean: Scalars['Boolean'];
+  CharacterInput: CharacterInput;
+  CharacterStepInput: CharacterStepInput;
+  InitCharacterInput: InitCharacterInput;
+  Inventory: Inventory;
+  LoginInput: LoginInput;
+  Mutation: {};
   Query: {};
   SignupInput: SignupInput;
   Soundboard: Soundboard;
@@ -232,7 +365,57 @@ export type ResolversParentTypes = {
   User: User;
 };
 
+export type CharacterResolvers<ContextType = any, ParentType extends ResolversParentTypes['Character'] = ResolversParentTypes['Character']> = {
+  id?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
+  userId?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
+  name?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
+  avatar?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
+  race?: Resolver<Maybe<ResolversTypes['Int']>, ParentType, ContextType>;
+  class?: Resolver<Maybe<ResolversTypes['Int']>, ParentType, ContextType>;
+  background?: Resolver<Maybe<ResolversTypes['Int']>, ParentType, ContextType>;
+  status?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
+  languages?: Resolver<Maybe<Array<Maybe<ResolversTypes['Int']>>>, ParentType, ContextType>;
+  stats?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
+  hp?: Resolver<Maybe<ResolversTypes['Int']>, ParentType, ContextType>;
+  maxHP?: Resolver<Maybe<ResolversTypes['Int']>, ParentType, ContextType>;
+  tempHP?: Resolver<Maybe<ResolversTypes['Int']>, ParentType, ContextType>;
+  deathSaves?: Resolver<Maybe<Array<Maybe<ResolversTypes['Boolean']>>>, ParentType, ContextType>;
+  conditions?: Resolver<Maybe<Array<Maybe<ResolversTypes['Int']>>>, ParentType, ContextType>;
+  level?: Resolver<Maybe<ResolversTypes['Int']>, ParentType, ContextType>;
+  xp?: Resolver<Maybe<ResolversTypes['Int']>, ParentType, ContextType>;
+  proficiencies?: Resolver<Maybe<Array<Maybe<ResolversTypes['Int']>>>, ParentType, ContextType>;
+  eyes?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
+  skin?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
+  hair?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
+  backstory?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
+  height?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
+  weight?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
+  age?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
+  alignment?: Resolver<Maybe<ResolversTypes['Int']>, ParentType, ContextType>;
+  gender?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
+  personalityTraits?: Resolver<Maybe<ResolversTypes['Int']>, ParentType, ContextType>;
+  ideals?: Resolver<Maybe<ResolversTypes['Int']>, ParentType, ContextType>;
+  bonds?: Resolver<Maybe<ResolversTypes['Int']>, ParentType, ContextType>;
+  flaws?: Resolver<Maybe<ResolversTypes['Int']>, ParentType, ContextType>;
+  faith?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
+  lifestyle?: Resolver<Maybe<ResolversTypes['Int']>, ParentType, ContextType>;
+  backgroundFeatures?: Resolver<Maybe<Array<Maybe<ResolversTypes['Int']>>>, ParentType, ContextType>;
+  characterStep?: Resolver<Maybe<ResolversTypes['Int']>, ParentType, ContextType>;
+  __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
+};
+
+export type InventoryResolvers<ContextType = any, ParentType extends ResolversParentTypes['Inventory'] = ResolversParentTypes['Inventory']> = {
+  id?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
+  characterId?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
+  equipmentId?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
+  quantity?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
+  __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
+};
+
 export type MutationResolvers<ContextType = any, ParentType extends ResolversParentTypes['Mutation'] = ResolversParentTypes['Mutation']> = {
+  initializeCharacter?: Resolver<ResolversTypes['Character'], ParentType, ContextType, RequireFields<MutationInitializeCharacterArgs, 'input'>>;
+  characterStep?: Resolver<ResolversTypes['Character'], ParentType, ContextType, RequireFields<MutationCharacterStepArgs, 'input'>>;
+  finalizeCharacter?: Resolver<ResolversTypes['Character'], ParentType, ContextType, RequireFields<MutationFinalizeCharacterArgs, 'input'>>;
   createSoundboard?: Resolver<ResolversTypes['Soundboard'], ParentType, ContextType, RequireFields<MutationCreateSoundboardArgs, 'title'>>;
   deleteSoundboard?: Resolver<ResolversTypes['Boolean'], ParentType, ContextType, RequireFields<MutationDeleteSoundboardArgs, 'soundboardId'>>;
   deleteSoundboardLink?: Resolver<ResolversTypes['Boolean'], ParentType, ContextType, RequireFields<MutationDeleteSoundboardLinkArgs, 'linkId'>>;
@@ -244,6 +427,8 @@ export type MutationResolvers<ContextType = any, ParentType extends ResolversPar
 };
 
 export type QueryResolvers<ContextType = any, ParentType extends ResolversParentTypes['Query'] = ResolversParentTypes['Query']> = {
+  getCharacter?: Resolver<ResolversTypes['Character'], ParentType, ContextType, RequireFields<QueryGetCharacterArgs, 'id'>>;
+  getInventory?: Resolver<ResolversTypes['Inventory'], ParentType, ContextType, RequireFields<QueryGetInventoryArgs, 'characterId'>>;
   getSoundboards?: Resolver<Array<Maybe<ResolversTypes['Soundboard']>>, ParentType, ContextType>;
   getSoundboard?: Resolver<ResolversTypes['Soundboard'], ParentType, ContextType, RequireFields<QueryGetSoundboardArgs, 'soundboardId'>>;
   getUser?: Resolver<ResolversTypes['User'], ParentType, ContextType, RequireFields<QueryGetUserArgs, 'id'>>;
@@ -275,6 +460,8 @@ export type UserResolvers<ContextType = any, ParentType extends ResolversParentT
 };
 
 export type Resolvers<ContextType = any> = {
+  Character?: CharacterResolvers<ContextType>;
+  Inventory?: InventoryResolvers<ContextType>;
   Mutation?: MutationResolvers<ContextType>;
   Query?: QueryResolvers<ContextType>;
   Soundboard?: SoundboardResolvers<ContextType>;

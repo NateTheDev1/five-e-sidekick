@@ -37,6 +37,7 @@ export class Character extends BaseModel {
 	faith?: string;
 	lifestyle?: number;
 	backgroundFeatures: number[] = [];
+	characterStep?: number;
 
 	static get tableName() {
 		return 'user_characters';
