@@ -1,3 +1,8 @@
+type Query {
+	getCharacter(id: Int!): Character!
+	getInventory(characterId: Int!): Inventory!
+}
+
 type Character {
 	id: Int!
 	userId: Int!

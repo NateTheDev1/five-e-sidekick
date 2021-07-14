@@ -5,6 +5,8 @@ import { deleteSoundboardLink } from './mutation/soundboard/deleteSoundboardLink
 import { appleLogin, login } from './mutation/user/login';
 import { signup } from './mutation/user/signup';
 import { waitListSignup } from './mutation/user/waitListSignup';
+import { getCharacter } from './query/character/getCharacter';
+import { getInventory } from './query/character/getInventory';
 import {
 	getSoundboard,
 	getSoundboards,
@@ -16,7 +18,9 @@ export const resolvers: Resolvers.Resolvers = {
 	Query: <Resolvers.QueryResolvers>{
 		getUser: getUser,
 		getSoundboards: getSoundboards,
-		getSoundboard: getSoundboard
+		getSoundboard: getSoundboard,
+		getCharacter: getCharacter,
+		getInventory: getInventory
 	},
 	Soundboard: SoundboardResolvers,
 	Mutation: <Resolvers.MutationResolvers>{
