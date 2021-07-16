@@ -126,6 +126,8 @@ interface Mutation {
   login: User;
   appleLogin: User;
   waitListSignup: Scalars['Boolean'];
+  resetPasswordFromCode: Scalars['Boolean'];
+  sendPasswordReset: Scalars['Boolean'];
 }
 
 
@@ -181,6 +183,16 @@ interface MutationAppleLoginArgs {
 
 interface MutationWaitListSignupArgs {
   email: Scalars['String'];
+}
+
+
+interface MutationResetPasswordFromCodeArgs {
+  credentials: PasswordResetInput;
+}
+
+interface PasswordResetInput {
+  code: Scalars['String'];
+  newPassword: Scalars['String'];
 }
 
 interface Query {
@@ -337,6 +349,7 @@ export type ResolversTypes = {
   Inventory: ResolverTypeWrapper<Inventory>;
   LoginInput: LoginInput;
   Mutation: ResolverTypeWrapper<{}>;
+  PasswordResetInput: PasswordResetInput;
   Query: ResolverTypeWrapper<{}>;
   SignupInput: SignupInput;
   Soundboard: ResolverTypeWrapper<Soundboard>;
@@ -357,6 +370,7 @@ export type ResolversParentTypes = {
   Inventory: Inventory;
   LoginInput: LoginInput;
   Mutation: {};
+  PasswordResetInput: PasswordResetInput;
   Query: {};
   SignupInput: SignupInput;
   Soundboard: Soundboard;
@@ -424,6 +438,8 @@ export type MutationResolvers<ContextType = any, ParentType extends ResolversPar
   login?: Resolver<ResolversTypes['User'], ParentType, ContextType, RequireFields<MutationLoginArgs, 'credentials'>>;
   appleLogin?: Resolver<ResolversTypes['User'], ParentType, ContextType, RequireFields<MutationAppleLoginArgs, 'email'>>;
   waitListSignup?: Resolver<ResolversTypes['Boolean'], ParentType, ContextType, RequireFields<MutationWaitListSignupArgs, 'email'>>;
+  resetPasswordFromCode?: Resolver<ResolversTypes['Boolean'], ParentType, ContextType, RequireFields<MutationResetPasswordFromCodeArgs, 'credentials'>>;
+  sendPasswordReset?: Resolver<ResolversTypes['Boolean'], ParentType, ContextType>;
 };
 
 export type QueryResolvers<ContextType = any, ParentType extends ResolversParentTypes['Query'] = ResolversParentTypes['Query']> = {

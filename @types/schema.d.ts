@@ -123,6 +123,8 @@ interface Mutation {
   login: User;
   appleLogin: User;
   waitListSignup: Scalars['Boolean'];
+  resetPasswordFromCode: Scalars['Boolean'];
+  sendPasswordReset: Scalars['Boolean'];
 }
 
 
@@ -178,6 +180,16 @@ interface MutationAppleLoginArgs {
 
 interface MutationWaitListSignupArgs {
   email: Scalars['String'];
+}
+
+
+interface MutationResetPasswordFromCodeArgs {
+  credentials: PasswordResetInput;
+}
+
+interface PasswordResetInput {
+  code: Scalars['String'];
+  newPassword: Scalars['String'];
 }
 
 interface Query {
