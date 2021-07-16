@@ -6,6 +6,8 @@ import { createSoundboard } from './mutation/soundboard/createSoundboard';
 import { deleteSoundboard } from './mutation/soundboard/deleteSoundboard';
 import { deleteSoundboardLink } from './mutation/soundboard/deleteSoundboardLink';
 import { appleLogin, login } from './mutation/user/login';
+import { resetPasswordFromCode } from './mutation/user/resetPasswordFromCode';
+import { sendPasswordReset } from './mutation/user/sendPasswordReset';
 import { signup } from './mutation/user/signup';
 import { waitListSignup } from './mutation/user/waitListSignup';
 import { getCharacter } from './query/character/getCharacter';
@@ -37,6 +39,8 @@ export const resolvers: Resolvers.Resolvers = {
 		waitListSignup: waitListSignup,
 		initializeCharacter: initializeCharacter,
 		finalizeCharacter: finalizeCharacter,
-		characterStep: characterStep
+		characterStep: characterStep,
+		sendPasswordReset: sendPasswordReset,
+		resetPasswordFromCode: resetPasswordFromCode
 	}
 };
