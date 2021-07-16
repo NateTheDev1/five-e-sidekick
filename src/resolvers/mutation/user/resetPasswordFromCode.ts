@@ -1,7 +1,5 @@
-import { randomUUID } from 'crypto';
 import { PasswordResets } from '../../../db/models/PasswordResets';
 import User from '../../../db/models/User';
-import sgMail from '@sendgrid/mail';
 import { AuthenticationService } from '../../../services/AuthenticationService';
 
 export const resetPasswordFromCode: Resolvers.MutationResolvers['resetPasswordFromCode'] =
@@ -24,6 +22,8 @@ export const resetPasswordFromCode: Resolvers.MutationResolvers['resetPasswordFr
 				args.credentials.newPassword
 			).hashPassword()
 		});
+
+		await PasswordResets.query().deleteById(existingCode.id);
 
 		return true;
 	};
