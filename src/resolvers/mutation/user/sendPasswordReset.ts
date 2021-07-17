@@ -40,8 +40,8 @@ export const sendPasswordReset: Resolvers.MutationResolvers['sendPasswordReset']
 					{
 						to: [{ email: user.email }],
 						dynamicTemplateData: {
-							link: `https://www.dndsidekick.com/password-reset/${code}`,
-							mobileURL: `dndsidekick://password-reset/${code}`
+							link: `https://www.dndsidekick.com/forgot-password/reset/${code}`,
+							mobileURL: `dndsidekick://forgot-password/reset/${code}`
 						}
 					}
 				]
