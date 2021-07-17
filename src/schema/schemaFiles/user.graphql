@@ -8,7 +8,7 @@ type Mutation {
 	appleLogin(email: String!): User!
 	waitListSignup(email: String!): Boolean!
 	resetPasswordFromCode(credentials: PasswordResetInput!): Boolean!
-	sendPasswordReset: Boolean!
+	sendPasswordReset(email: String!): Boolean!
 }
 
 input PasswordResetInput {

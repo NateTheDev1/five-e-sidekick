@@ -187,6 +187,11 @@ interface MutationResetPasswordFromCodeArgs {
   credentials: PasswordResetInput;
 }
 
+
+interface MutationSendPasswordResetArgs {
+  email: Scalars['String'];
+}
+
 interface PasswordResetInput {
   code: Scalars['String'];
   newPassword: Scalars['String'];

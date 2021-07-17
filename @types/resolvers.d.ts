@@ -190,6 +190,11 @@ interface MutationResetPasswordFromCodeArgs {
   credentials: PasswordResetInput;
 }
 
+
+interface MutationSendPasswordResetArgs {
+  email: Scalars['String'];
+}
+
 interface PasswordResetInput {
   code: Scalars['String'];
   newPassword: Scalars['String'];
@@ -439,7 +444,7 @@ export type MutationResolvers<ContextType = any, ParentType extends ResolversPar
   appleLogin?: Resolver<ResolversTypes['User'], ParentType, ContextType, RequireFields<MutationAppleLoginArgs, 'email'>>;
   waitListSignup?: Resolver<ResolversTypes['Boolean'], ParentType, ContextType, RequireFields<MutationWaitListSignupArgs, 'email'>>;
   resetPasswordFromCode?: Resolver<ResolversTypes['Boolean'], ParentType, ContextType, RequireFields<MutationResetPasswordFromCodeArgs, 'credentials'>>;
-  sendPasswordReset?: Resolver<ResolversTypes['Boolean'], ParentType, ContextType>;
+  sendPasswordReset?: Resolver<ResolversTypes['Boolean'], ParentType, ContextType, RequireFields<MutationSendPasswordResetArgs, 'email'>>;
 };
 
 export type QueryResolvers<ContextType = any, ParentType extends ResolversParentTypes['Query'] = ResolversParentTypes['Query']> = {
