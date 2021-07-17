@@ -26,13 +26,15 @@ export const sendPasswordReset: Resolvers.MutationResolvers['sendPasswordReset']
 			to: [user.email],
 			from: {
 				email: 'corporate@dndsidekick.com',
-				name: '5ESidekick'
+				name: 'DNDSidekick'
 			},
 			subject: 'You have requested to reset your password on DNDSidekick',
 			templateId: 'd-a571aa7478434947825c54117c9fb4c3',
 			personalizations: [
 				{
 					to: [{ email: user.email }],
+					subject:
+						'You have requested to reset your password on DNDSidekick',
 					dynamicTemplateData: {
 						link: `https://www.dndsidekick.com/forgot-password/reset/${code}`,
 						mobileURL: `dndsidekick://forgot-password/reset/${code}`
