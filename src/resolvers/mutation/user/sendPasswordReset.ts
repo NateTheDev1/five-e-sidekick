@@ -37,13 +37,18 @@ export const sendPasswordReset: Resolvers.MutationResolvers['sendPasswordReset']
 						'You have requested to reset your password on DNDSidekick',
 					dynamicTemplateData: {
 						link: `https://www.dndsidekick.com/forgot-password/reset/${code}`,
-						mobileURL: `dndsidekick://--/forgot-password/reset/${code}`
+						url: `dndsidekick://--/forgot-password/reset/${code}`
+					},
+					//@ts-ignore
+					dynamic_template_data: {
+						link: `https://www.dndsidekick.com/forgot-password/reset/${code}`,
+						url: `dndsidekick://--/forgot-password/reset/${code}`
 					}
 				}
 			],
 			dynamicTemplateData: {
 				link: `https://www.dndsidekick.com/forgot-password/reset/${code}`,
-				mobileURL: `dndsidekick://--/forgot-password/reset/${code}`
+				url: `dndsidekick://--/forgot-password/reset/${code}`
 			}
 		});
 
