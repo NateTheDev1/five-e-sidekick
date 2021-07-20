@@ -92,6 +92,32 @@ interface CharacterStepInput {
   character: CharacterInput;
 }
 
+interface DevUpdate {
+  __typename?: 'DevUpdate';
+  id: Scalars['Int'];
+  title: Scalars['String'];
+  version?: Maybe<Scalars['String']>;
+  releaseDate?: Maybe<Scalars['String']>;
+  tags: Array<Maybe<Scalars['String']>>;
+  paragraphs: Array<Maybe<Scalars['String']>>;
+}
+
+interface DevUpdateInput {
+  title: Scalars['String'];
+  version?: Maybe<Scalars['String']>;
+  releaseDate?: Maybe<Scalars['String']>;
+  tags: Array<Maybe<Scalars['String']>>;
+  paragraphs: Array<Maybe<Scalars['String']>>;
+}
+
+interface DevUpdatePatchInput {
+  title?: Maybe<Scalars['String']>;
+  version?: Maybe<Scalars['String']>;
+  releaseDate?: Maybe<Scalars['String']>;
+  tags?: Maybe<Array<Maybe<Scalars['String']>>>;
+  paragraphs?: Maybe<Array<Maybe<Scalars['String']>>>;
+}
+
 interface InitCharacterInput {
   userId: Scalars['Int'];
   character: CharacterInput;
@@ -119,6 +145,9 @@ interface Mutation {
   deleteSoundboard: Scalars['Boolean'];
   deleteSoundboardLink: Scalars['Boolean'];
   addSoundboardLink: Scalars['Boolean'];
+  publishUpdate?: Maybe<DevUpdate>;
+  deleteUpdate: Scalars['Boolean'];
+  editUpdate: DevUpdate;
   signup: User;
   login: User;
   appleLogin: User;
@@ -163,6 +192,22 @@ interface MutationAddSoundboardLinkArgs {
 }
 
 
+interface MutationPublishUpdateArgs {
+  update: DevUpdateInput;
+}
+
+
+interface MutationDeleteUpdateArgs {
+  id: Scalars['Int'];
+}
+
+
+interface MutationEditUpdateArgs {
+  update: DevUpdatePatchInput;
+  id: Scalars['Int'];
+}
+
+
 interface MutationSignupArgs {
   user: SignupInput;
 }
@@ -203,6 +248,7 @@ interface Query {
   getInventory: Inventory;
   getSoundboards: Array<Maybe<Soundboard>>;
   getSoundboard: Soundboard;
+  getLatestUpdate?: Maybe<DevUpdate>;
   getUser: User;
 }
 

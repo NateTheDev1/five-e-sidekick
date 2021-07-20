@@ -95,6 +95,32 @@ interface CharacterStepInput {
   character: CharacterInput;
 }
 
+interface DevUpdate {
+  __typename?: 'DevUpdate';
+  id: Scalars['Int'];
+  title: Scalars['String'];
+  version?: Maybe<Scalars['String']>;
+  releaseDate?: Maybe<Scalars['String']>;
+  tags: Array<Maybe<Scalars['String']>>;
+  paragraphs: Array<Maybe<Scalars['String']>>;
+}
+
+interface DevUpdateInput {
+  title: Scalars['String'];
+  version?: Maybe<Scalars['String']>;
+  releaseDate?: Maybe<Scalars['String']>;
+  tags: Array<Maybe<Scalars['String']>>;
+  paragraphs: Array<Maybe<Scalars['String']>>;
+}
+
+interface DevUpdatePatchInput {
+  title?: Maybe<Scalars['String']>;
+  version?: Maybe<Scalars['String']>;
+  releaseDate?: Maybe<Scalars['String']>;
+  tags?: Maybe<Array<Maybe<Scalars['String']>>>;
+  paragraphs?: Maybe<Array<Maybe<Scalars['String']>>>;
+}
+
 interface InitCharacterInput {
   userId: Scalars['Int'];
   character: CharacterInput;
@@ -122,6 +148,9 @@ interface Mutation {
   deleteSoundboard: Scalars['Boolean'];
   deleteSoundboardLink: Scalars['Boolean'];
   addSoundboardLink: Scalars['Boolean'];
+  publishUpdate?: Maybe<DevUpdate>;
+  deleteUpdate: Scalars['Boolean'];
+  editUpdate: DevUpdate;
   signup: User;
   login: User;
   appleLogin: User;
@@ -166,6 +195,22 @@ interface MutationAddSoundboardLinkArgs {
 }
 
 
+interface MutationPublishUpdateArgs {
+  update: DevUpdateInput;
+}
+
+
+interface MutationDeleteUpdateArgs {
+  id: Scalars['Int'];
+}
+
+
+interface MutationEditUpdateArgs {
+  update: DevUpdatePatchInput;
+  id: Scalars['Int'];
+}
+
+
 interface MutationSignupArgs {
   user: SignupInput;
 }
@@ -206,6 +251,7 @@ interface Query {
   getInventory: Inventory;
   getSoundboards: Array<Maybe<Soundboard>>;
   getSoundboard: Soundboard;
+  getLatestUpdate?: Maybe<DevUpdate>;
   getUser: User;
 }
 
@@ -350,6 +396,9 @@ export type ResolversTypes = {
   Boolean: ResolverTypeWrapper<Scalars['Boolean']>;
   CharacterInput: CharacterInput;
   CharacterStepInput: CharacterStepInput;
+  DevUpdate: ResolverTypeWrapper<DevUpdate>;
+  DevUpdateInput: DevUpdateInput;
+  DevUpdatePatchInput: DevUpdatePatchInput;
   InitCharacterInput: InitCharacterInput;
   Inventory: ResolverTypeWrapper<Inventory>;
   LoginInput: LoginInput;
@@ -371,6 +420,9 @@ export type ResolversParentTypes = {
   Boolean: Scalars['Boolean'];
   CharacterInput: CharacterInput;
   CharacterStepInput: CharacterStepInput;
+  DevUpdate: DevUpdate;
+  DevUpdateInput: DevUpdateInput;
+  DevUpdatePatchInput: DevUpdatePatchInput;
   InitCharacterInput: InitCharacterInput;
   Inventory: Inventory;
   LoginInput: LoginInput;
@@ -423,6 +475,16 @@ export type CharacterResolvers<ContextType = any, ParentType extends ResolversPa
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
+export type DevUpdateResolvers<ContextType = any, ParentType extends ResolversParentTypes['DevUpdate'] = ResolversParentTypes['DevUpdate']> = {
+  id?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
+  title?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  version?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
+  releaseDate?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
+  tags?: Resolver<Array<Maybe<ResolversTypes['String']>>, ParentType, ContextType>;
+  paragraphs?: Resolver<Array<Maybe<ResolversTypes['String']>>, ParentType, ContextType>;
+  __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
+};
+
 export type InventoryResolvers<ContextType = any, ParentType extends ResolversParentTypes['Inventory'] = ResolversParentTypes['Inventory']> = {
   id?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
   characterId?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
@@ -439,6 +501,9 @@ export type MutationResolvers<ContextType = any, ParentType extends ResolversPar
   deleteSoundboard?: Resolver<ResolversTypes['Boolean'], ParentType, ContextType, RequireFields<MutationDeleteSoundboardArgs, 'soundboardId'>>;
   deleteSoundboardLink?: Resolver<ResolversTypes['Boolean'], ParentType, ContextType, RequireFields<MutationDeleteSoundboardLinkArgs, 'linkId'>>;
   addSoundboardLink?: Resolver<ResolversTypes['Boolean'], ParentType, ContextType, RequireFields<MutationAddSoundboardLinkArgs, 'link'>>;
+  publishUpdate?: Resolver<Maybe<ResolversTypes['DevUpdate']>, ParentType, ContextType, RequireFields<MutationPublishUpdateArgs, 'update'>>;
+  deleteUpdate?: Resolver<ResolversTypes['Boolean'], ParentType, ContextType, RequireFields<MutationDeleteUpdateArgs, 'id'>>;
+  editUpdate?: Resolver<ResolversTypes['DevUpdate'], ParentType, ContextType, RequireFields<MutationEditUpdateArgs, 'update' | 'id'>>;
   signup?: Resolver<ResolversTypes['User'], ParentType, ContextType, RequireFields<MutationSignupArgs, 'user'>>;
   login?: Resolver<ResolversTypes['User'], ParentType, ContextType, RequireFields<MutationLoginArgs, 'credentials'>>;
   appleLogin?: Resolver<ResolversTypes['User'], ParentType, ContextType, RequireFields<MutationAppleLoginArgs, 'email'>>;
@@ -452,6 +517,7 @@ export type QueryResolvers<ContextType = any, ParentType extends ResolversParent
   getInventory?: Resolver<ResolversTypes['Inventory'], ParentType, ContextType, RequireFields<QueryGetInventoryArgs, 'characterId'>>;
   getSoundboards?: Resolver<Array<Maybe<ResolversTypes['Soundboard']>>, ParentType, ContextType>;
   getSoundboard?: Resolver<ResolversTypes['Soundboard'], ParentType, ContextType, RequireFields<QueryGetSoundboardArgs, 'soundboardId'>>;
+  getLatestUpdate?: Resolver<Maybe<ResolversTypes['DevUpdate']>, ParentType, ContextType>;
   getUser?: Resolver<ResolversTypes['User'], ParentType, ContextType, RequireFields<QueryGetUserArgs, 'id'>>;
 };
 
@@ -482,6 +548,7 @@ export type UserResolvers<ContextType = any, ParentType extends ResolversParentT
 
 export type Resolvers<ContextType = any> = {
   Character?: CharacterResolvers<ContextType>;
+  DevUpdate?: DevUpdateResolvers<ContextType>;
   Inventory?: InventoryResolvers<ContextType>;
   Mutation?: MutationResolvers<ContextType>;
   Query?: QueryResolvers<ContextType>;

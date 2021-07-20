@@ -3,6 +3,7 @@ type Query {
   getInventory(characterId: Int!): Inventory!
   getSoundboards: [Soundboard]!
   getSoundboard(soundboardId: Int!): Soundboard!
+  getLatestUpdate: DevUpdate
   getUser(id: Int!): User!
 }
 
@@ -14,6 +15,9 @@ type Mutation {
   deleteSoundboard(soundboardId: Int!): Boolean!
   deleteSoundboardLink(linkId: Int!): Boolean!
   addSoundboardLink(link: SoundboardLinkInput!): Boolean!
+  publishUpdate(update: DevUpdateInput!): DevUpdate
+  deleteUpdate(id: Int!): Boolean!
+  editUpdate(update: DevUpdatePatchInput!, id: Int!): DevUpdate!
   signup(user: SignupInput!): User!
   login(credentials: LoginInput!): User!
   appleLogin(email: String!): User!
@@ -131,6 +135,31 @@ type Soundboard {
   title: String!
   userId: Int!
   links: [SoundboardLink]!
+}
+
+input DevUpdatePatchInput {
+  title: String
+  version: String
+  releaseDate: String
+  tags: [String]
+  paragraphs: [String]
+}
+
+input DevUpdateInput {
+  title: String!
+  version: String
+  releaseDate: String
+  tags: [String]!
+  paragraphs: [String]!
+}
+
+type DevUpdate {
+  id: Int!
+  title: String!
+  version: String
+  releaseDate: String
+  tags: [String]!
+  paragraphs: [String]!
 }
 
 input PasswordResetInput {
