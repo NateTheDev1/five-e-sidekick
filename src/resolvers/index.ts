@@ -5,6 +5,9 @@ import { addSoundboardLink } from './mutation/soundboard/addSoundboardLink';
 import { createSoundboard } from './mutation/soundboard/createSoundboard';
 import { deleteSoundboard } from './mutation/soundboard/deleteSoundboard';
 import { deleteSoundboardLink } from './mutation/soundboard/deleteSoundboardLink';
+import { deleteUpdate } from './mutation/system/deleteUpdate';
+import { editUpdate } from './mutation/system/editUpdate';
+import { publishUpdate } from './mutation/system/publishUpdate';
 import { appleLogin, login } from './mutation/user/login';
 import { resetPasswordFromCode } from './mutation/user/resetPasswordFromCode';
 import { sendPasswordReset } from './mutation/user/sendPasswordReset';
@@ -17,6 +20,7 @@ import {
 	getSoundboards,
 	SoundboardResolvers
 } from './query/soundboard/getSoundboard';
+import { getLatestUpdate } from './query/system/getLatestUpdate';
 import { getUser } from './query/user/getUser';
 
 export const resolvers: Resolvers.Resolvers = {
@@ -25,7 +29,8 @@ export const resolvers: Resolvers.Resolvers = {
 		getSoundboards: getSoundboards,
 		getSoundboard: getSoundboard,
 		getCharacter: getCharacter,
-		getInventory: getInventory
+		getInventory: getInventory,
+		getLatestUpdate: getLatestUpdate
 	},
 	Soundboard: SoundboardResolvers,
 	Mutation: <Resolvers.MutationResolvers>{
@@ -41,6 +46,9 @@ export const resolvers: Resolvers.Resolvers = {
 		finalizeCharacter: finalizeCharacter,
 		characterStep: characterStep,
 		sendPasswordReset: sendPasswordReset,
-		resetPasswordFromCode: resetPasswordFromCode
+		resetPasswordFromCode: resetPasswordFromCode,
+		publishUpdate: publishUpdate,
+		deleteUpdate: deleteUpdate,
+		editUpdate: editUpdate
 	}
 };

@@ -1,0 +1,34 @@
+type Query {
+	getLatestUpdate: DevUpdate
+}
+
+type Mutation {
+	publishUpdate(update: DevUpdateInput!): DevUpdate
+	deleteUpdate(id: Int!): Boolean!
+	editUpdate(update: DevUpdatePatchInput!, id: Int!): DevUpdate!
+}
+
+input DevUpdatePatchInput {
+	title: String
+	version: String
+	releaseDate: String
+	tags: [String]
+	paragraphs: [String]
+}
+
+input DevUpdateInput {
+	title: String!
+	version: String
+	releaseDate: String
+	tags: [String]!
+	paragraphs: [String]!
+}
+
+type DevUpdate {
+	id: Int!
+	title: String!
+	version: String
+	releaseDate: String
+	tags: [String]!
+	paragraphs: [String]!
+}
