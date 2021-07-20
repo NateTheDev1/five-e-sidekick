@@ -16,12 +16,13 @@ export const resetPasswordFromCode: Resolvers.MutationResolvers['resetPasswordFr
 			throw new Error('Code has expired!');
 		}
 
-		await User.query().patch({
-			email: existingCode.forEmail,
-			password: await new AuthenticationService(
-				args.credentials.newPassword
-			).hashPassword()
-		});
+		await User.query()
+			.where({ email: existingCode.forEmail })
+			.patch({
+				password: await new AuthenticationService(
+					args.credentials.newPassword
+				).hashPassword()
+			});
 
 		await PasswordResets.query().deleteById(existingCode.id);
 
