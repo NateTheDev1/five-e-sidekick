@@ -42,13 +42,13 @@ export const sendPasswordReset: Resolvers.MutationResolvers['sendPasswordReset']
 					//@ts-ignore
 					dynamic_template_data: {
 						link: `https://www.dndsidekick.com/forgot-password/reset/${code}`,
-						url: `https://www.dndsidekick.com/forgot-password/link/dndsidekick://--/forgot-password/reset/${code}`
+						url: `https://www.dndsidekick.com/forgot-password/link/${code}`
 					}
 				}
 			],
 			dynamicTemplateData: {
 				link: `https://www.dndsidekick.com/forgot-password/reset/${code}`,
-				url: `https://www.dndsidekick.com/forgot-password/link/dndsidekick://--/forgot-password/reset/${code}`
+				url: `https://www.dndsidekick.com/forgot-password/link/${code}`
 			}
 		});
 
