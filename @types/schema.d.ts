@@ -154,6 +154,7 @@ interface Mutation {
   waitListSignup: Scalars['Boolean'];
   resetPasswordFromCode: Scalars['Boolean'];
   sendPasswordReset: Scalars['Boolean'];
+  updateUser: User;
 }
 
 
@@ -235,6 +236,12 @@ interface MutationResetPasswordFromCodeArgs {
 
 interface MutationSendPasswordResetArgs {
   email: Scalars['String'];
+}
+
+
+interface MutationUpdateUserArgs {
+  fullName: Scalars['String'];
+  id: Scalars['Int'];
 }
 
 interface PasswordResetInput {

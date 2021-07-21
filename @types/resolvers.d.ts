@@ -157,6 +157,7 @@ interface Mutation {
   waitListSignup: Scalars['Boolean'];
   resetPasswordFromCode: Scalars['Boolean'];
   sendPasswordReset: Scalars['Boolean'];
+  updateUser: User;
 }
 
 
@@ -238,6 +239,12 @@ interface MutationResetPasswordFromCodeArgs {
 
 interface MutationSendPasswordResetArgs {
   email: Scalars['String'];
+}
+
+
+interface MutationUpdateUserArgs {
+  fullName: Scalars['String'];
+  id: Scalars['Int'];
 }
 
 interface PasswordResetInput {
@@ -510,6 +517,7 @@ export type MutationResolvers<ContextType = any, ParentType extends ResolversPar
   waitListSignup?: Resolver<ResolversTypes['Boolean'], ParentType, ContextType, RequireFields<MutationWaitListSignupArgs, 'email'>>;
   resetPasswordFromCode?: Resolver<ResolversTypes['Boolean'], ParentType, ContextType, RequireFields<MutationResetPasswordFromCodeArgs, 'credentials'>>;
   sendPasswordReset?: Resolver<ResolversTypes['Boolean'], ParentType, ContextType, RequireFields<MutationSendPasswordResetArgs, 'email'>>;
+  updateUser?: Resolver<ResolversTypes['User'], ParentType, ContextType, RequireFields<MutationUpdateUserArgs, 'fullName' | 'id'>>;
 };
 
 export type QueryResolvers<ContextType = any, ParentType extends ResolversParentTypes['Query'] = ResolversParentTypes['Query']> = {
