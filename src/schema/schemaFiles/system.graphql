@@ -1,11 +1,36 @@
 type Query {
 	getLatestUpdate: DevUpdate
+	getArticle(id: Int!): Article!
+	getArticles(params: ArticleOrder!): [Article]!
+}
+
+enum ArticleOrder {
+	TOP
+	ALL
 }
 
 type Mutation {
 	publishUpdate(update: DevUpdateInput!): DevUpdate
 	deleteUpdate(id: Int!): Boolean!
 	editUpdate(update: DevUpdatePatchInput!, id: Int!): DevUpdate!
+	createArticle(article: CreateArticleInput!): Article!
+	deleteArticle(id: Int!): Boolean!
+}
+
+input CreateArticleInput {
+	title: String!
+	url: String
+	author: String!
+	views: Int!
+	content: [CreateArticleContentBlock]
+}
+
+input CreateArticleContentBlock {
+	articleId: Int!
+	type: String!
+	fontSize: String!
+	imageURL: String
+	order: Int!
 }
 
 input DevUpdatePatchInput {
@@ -31,4 +56,22 @@ type DevUpdate {
 	releaseDate: String
 	tags: [String]!
 	paragraphs: [String]!
+}
+
+type Article {
+	id: Int!
+	title: String!
+	url: String
+	author: String!
+	views: Int!
+	content: [ArticleContent]
+}
+
+type ArticleContent {
+	id: Int!
+	articleId: Int!
+	type: String!
+	fontSize: String!
+	imageURL: String
+	order: Int!
 }

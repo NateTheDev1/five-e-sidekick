@@ -23,6 +23,8 @@ import {
 import { getLatestUpdate } from './query/system/getLatestUpdate';
 import { getUser } from './query/user/getUser';
 import { updateUser } from './mutation/user/updateUser';
+import { getArticle, getArticles } from './query/system/article';
+import { createArticle, deleteArticle } from './mutation/system/article';
 
 export const resolvers: Resolvers.Resolvers = {
 	Query: <Resolvers.QueryResolvers>{
@@ -31,7 +33,9 @@ export const resolvers: Resolvers.Resolvers = {
 		getSoundboard: getSoundboard,
 		getCharacter: getCharacter,
 		getInventory: getInventory,
-		getLatestUpdate: getLatestUpdate
+		getLatestUpdate: getLatestUpdate,
+		getArticle: getArticle,
+		getArticles: getArticles
 	},
 	Soundboard: SoundboardResolvers,
 	Mutation: <Resolvers.MutationResolvers>{
@@ -51,6 +55,8 @@ export const resolvers: Resolvers.Resolvers = {
 		publishUpdate: publishUpdate,
 		deleteUpdate: deleteUpdate,
 		editUpdate: editUpdate,
-		updateUser: updateUser
+		updateUser: updateUser,
+		createArticle: createArticle,
+		deleteArticle: deleteArticle
 	}
 };

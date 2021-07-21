@@ -12,6 +12,30 @@ interface Scalars {
   Float: number;
 }
 
+interface Article {
+  __typename?: 'Article';
+  id: Scalars['Int'];
+  title: Scalars['String'];
+  url?: Maybe<Scalars['String']>;
+  author: Scalars['String'];
+  views: Scalars['Int'];
+  content?: Maybe<Array<Maybe<ArticleContent>>>;
+}
+
+interface ArticleContent {
+  __typename?: 'ArticleContent';
+  id: Scalars['Int'];
+  articleId: Scalars['Int'];
+  type: Scalars['String'];
+  fontSize: Scalars['String'];
+  imageURL?: Maybe<Scalars['String']>;
+  order: Scalars['Int'];
+}
+
+type ArticleOrder =
+  | 'TOP'
+  | 'ALL';
+
 interface Character {
   __typename?: 'Character';
   id: Scalars['Int'];
@@ -92,6 +116,22 @@ interface CharacterStepInput {
   character: CharacterInput;
 }
 
+interface CreateArticleContentBlock {
+  articleId: Scalars['Int'];
+  type: Scalars['String'];
+  fontSize: Scalars['String'];
+  imageURL?: Maybe<Scalars['String']>;
+  order: Scalars['Int'];
+}
+
+interface CreateArticleInput {
+  title: Scalars['String'];
+  url?: Maybe<Scalars['String']>;
+  author: Scalars['String'];
+  views: Scalars['Int'];
+  content?: Maybe<Array<Maybe<CreateArticleContentBlock>>>;
+}
+
 interface DevUpdate {
   __typename?: 'DevUpdate';
   id: Scalars['Int'];
@@ -148,6 +188,8 @@ interface Mutation {
   publishUpdate?: Maybe<DevUpdate>;
   deleteUpdate: Scalars['Boolean'];
   editUpdate: DevUpdate;
+  createArticle: Article;
+  deleteArticle: Scalars['Boolean'];
   signup: User;
   login: User;
   appleLogin: User;
@@ -209,6 +251,16 @@ interface MutationEditUpdateArgs {
 }
 
 
+interface MutationCreateArticleArgs {
+  article: CreateArticleInput;
+}
+
+
+interface MutationDeleteArticleArgs {
+  id: Scalars['Int'];
+}
+
+
 interface MutationSignupArgs {
   user: SignupInput;
 }
@@ -256,6 +308,8 @@ interface Query {
   getSoundboards: Array<Maybe<Soundboard>>;
   getSoundboard: Soundboard;
   getLatestUpdate?: Maybe<DevUpdate>;
+  getArticle: Article;
+  getArticles: Array<Maybe<Article>>;
   getUser: User;
 }
 
@@ -272,6 +326,16 @@ interface QueryGetInventoryArgs {
 
 interface QueryGetSoundboardArgs {
   soundboardId: Scalars['Int'];
+}
+
+
+interface QueryGetArticleArgs {
+  id: Scalars['Int'];
+}
+
+
+interface QueryGetArticlesArgs {
+  params: ArticleOrder;
 }
 
 

@@ -4,6 +4,8 @@ type Query {
   getSoundboards: [Soundboard]!
   getSoundboard(soundboardId: Int!): Soundboard!
   getLatestUpdate: DevUpdate
+  getArticle(id: Int!): Article!
+  getArticles(params: ArticleOrder!): [Article]!
   getUser(id: Int!): User!
 }
 
@@ -18,6 +20,8 @@ type Mutation {
   publishUpdate(update: DevUpdateInput!): DevUpdate
   deleteUpdate(id: Int!): Boolean!
   editUpdate(update: DevUpdatePatchInput!, id: Int!): DevUpdate!
+  createArticle(article: CreateArticleInput!): Article!
+  deleteArticle(id: Int!): Boolean!
   signup(user: SignupInput!): User!
   login(credentials: LoginInput!): User!
   appleLogin(email: String!): User!
@@ -138,6 +142,27 @@ type Soundboard {
   links: [SoundboardLink]!
 }
 
+enum ArticleOrder {
+  TOP
+  ALL
+}
+
+input CreateArticleInput {
+  title: String!
+  url: String
+  author: String!
+  views: Int!
+  content: [CreateArticleContentBlock]
+}
+
+input CreateArticleContentBlock {
+  articleId: Int!
+  type: String!
+  fontSize: String!
+  imageURL: String
+  order: Int!
+}
+
 input DevUpdatePatchInput {
   title: String
   version: String
@@ -161,6 +186,24 @@ type DevUpdate {
   releaseDate: String
   tags: [String]!
   paragraphs: [String]!
+}
+
+type Article {
+  id: Int!
+  title: String!
+  url: String
+  author: String!
+  views: Int!
+  content: [ArticleContent]
+}
+
+type ArticleContent {
+  id: Int!
+  articleId: Int!
+  type: String!
+  fontSize: String!
+  imageURL: String
+  order: Int!
 }
 
 input PasswordResetInput {
