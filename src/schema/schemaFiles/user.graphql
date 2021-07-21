@@ -9,6 +9,7 @@ type Mutation {
 	waitListSignup(email: String!): Boolean!
 	resetPasswordFromCode(credentials: PasswordResetInput!): Boolean!
 	sendPasswordReset(email: String!): Boolean!
+	updateUser(fullName: String!, id: Int!): User!
 }
 
 input PasswordResetInput {

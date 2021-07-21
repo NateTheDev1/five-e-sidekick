@@ -22,6 +22,7 @@ import {
 } from './query/soundboard/getSoundboard';
 import { getLatestUpdate } from './query/system/getLatestUpdate';
 import { getUser } from './query/user/getUser';
+import { updateUser } from './mutation/user/updateUser';
 
 export const resolvers: Resolvers.Resolvers = {
 	Query: <Resolvers.QueryResolvers>{
@@ -49,6 +50,7 @@ export const resolvers: Resolvers.Resolvers = {
 		resetPasswordFromCode: resetPasswordFromCode,
 		publishUpdate: publishUpdate,
 		deleteUpdate: deleteUpdate,
-		editUpdate: editUpdate
+		editUpdate: editUpdate,
+		updateUser: updateUser
 	}
 };
