@@ -15,6 +15,30 @@ interface Scalars {
   Float: number;
 }
 
+interface Article {
+  __typename?: 'Article';
+  id: Scalars['Int'];
+  title: Scalars['String'];
+  url?: Maybe<Scalars['String']>;
+  author: Scalars['String'];
+  views: Scalars['Int'];
+  content?: Maybe<Array<Maybe<ArticleContent>>>;
+}
+
+interface ArticleContent {
+  __typename?: 'ArticleContent';
+  id: Scalars['Int'];
+  articleId: Scalars['Int'];
+  type: Scalars['String'];
+  fontSize: Scalars['String'];
+  imageURL?: Maybe<Scalars['String']>;
+  order: Scalars['Int'];
+}
+
+type ArticleOrder =
+  | 'TOP'
+  | 'ALL';
+
 interface Character {
   __typename?: 'Character';
   id: Scalars['Int'];
@@ -95,6 +119,22 @@ interface CharacterStepInput {
   character: CharacterInput;
 }
 
+interface CreateArticleContentBlock {
+  articleId: Scalars['Int'];
+  type: Scalars['String'];
+  fontSize: Scalars['String'];
+  imageURL?: Maybe<Scalars['String']>;
+  order: Scalars['Int'];
+}
+
+interface CreateArticleInput {
+  title: Scalars['String'];
+  url?: Maybe<Scalars['String']>;
+  author: Scalars['String'];
+  views: Scalars['Int'];
+  content?: Maybe<Array<Maybe<CreateArticleContentBlock>>>;
+}
+
 interface DevUpdate {
   __typename?: 'DevUpdate';
   id: Scalars['Int'];
@@ -151,6 +191,8 @@ interface Mutation {
   publishUpdate?: Maybe<DevUpdate>;
   deleteUpdate: Scalars['Boolean'];
   editUpdate: DevUpdate;
+  createArticle: Article;
+  deleteArticle: Scalars['Boolean'];
   signup: User;
   login: User;
   appleLogin: User;
@@ -212,6 +254,16 @@ interface MutationEditUpdateArgs {
 }
 
 
+interface MutationCreateArticleArgs {
+  article: CreateArticleInput;
+}
+
+
+interface MutationDeleteArticleArgs {
+  id: Scalars['Int'];
+}
+
+
 interface MutationSignupArgs {
   user: SignupInput;
 }
@@ -259,6 +311,8 @@ interface Query {
   getSoundboards: Array<Maybe<Soundboard>>;
   getSoundboard: Soundboard;
   getLatestUpdate?: Maybe<DevUpdate>;
+  getArticle: Article;
+  getArticles: Array<Maybe<Article>>;
   getUser: User;
 }
 
@@ -275,6 +329,16 @@ interface QueryGetInventoryArgs {
 
 interface QueryGetSoundboardArgs {
   soundboardId: Scalars['Int'];
+}
+
+
+interface QueryGetArticleArgs {
+  id: Scalars['Int'];
+}
+
+
+interface QueryGetArticlesArgs {
+  params: ArticleOrder;
 }
 
 
@@ -397,12 +461,17 @@ export type DirectiveResolverFn<TResult = {}, TParent = {}, TContext = {}, TArgs
 
 /** Mapping between all available schema types and the resolvers types */
 export type ResolversTypes = {
-  Character: ResolverTypeWrapper<Character>;
+  Article: ResolverTypeWrapper<Article>;
   Int: ResolverTypeWrapper<Scalars['Int']>;
   String: ResolverTypeWrapper<Scalars['String']>;
+  ArticleContent: ResolverTypeWrapper<ArticleContent>;
+  ArticleOrder: ArticleOrder;
+  Character: ResolverTypeWrapper<Character>;
   Boolean: ResolverTypeWrapper<Scalars['Boolean']>;
   CharacterInput: CharacterInput;
   CharacterStepInput: CharacterStepInput;
+  CreateArticleContentBlock: CreateArticleContentBlock;
+  CreateArticleInput: CreateArticleInput;
   DevUpdate: ResolverTypeWrapper<DevUpdate>;
   DevUpdateInput: DevUpdateInput;
   DevUpdatePatchInput: DevUpdatePatchInput;
@@ -421,12 +490,16 @@ export type ResolversTypes = {
 
 /** Mapping between all available schema types and the resolvers parents */
 export type ResolversParentTypes = {
-  Character: Character;
+  Article: Article;
   Int: Scalars['Int'];
   String: Scalars['String'];
+  ArticleContent: ArticleContent;
+  Character: Character;
   Boolean: Scalars['Boolean'];
   CharacterInput: CharacterInput;
   CharacterStepInput: CharacterStepInput;
+  CreateArticleContentBlock: CreateArticleContentBlock;
+  CreateArticleInput: CreateArticleInput;
   DevUpdate: DevUpdate;
   DevUpdateInput: DevUpdateInput;
   DevUpdatePatchInput: DevUpdatePatchInput;
@@ -441,6 +514,26 @@ export type ResolversParentTypes = {
   SoundboardLink: SoundboardLink;
   SoundboardLinkInput: SoundboardLinkInput;
   User: User;
+};
+
+export type ArticleResolvers<ContextType = any, ParentType extends ResolversParentTypes['Article'] = ResolversParentTypes['Article']> = {
+  id?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
+  title?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  url?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
+  author?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  views?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
+  content?: Resolver<Maybe<Array<Maybe<ResolversTypes['ArticleContent']>>>, ParentType, ContextType>;
+  __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
+};
+
+export type ArticleContentResolvers<ContextType = any, ParentType extends ResolversParentTypes['ArticleContent'] = ResolversParentTypes['ArticleContent']> = {
+  id?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
+  articleId?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
+  type?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  fontSize?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  imageURL?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
+  order?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
+  __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
 export type CharacterResolvers<ContextType = any, ParentType extends ResolversParentTypes['Character'] = ResolversParentTypes['Character']> = {
@@ -511,6 +604,8 @@ export type MutationResolvers<ContextType = any, ParentType extends ResolversPar
   publishUpdate?: Resolver<Maybe<ResolversTypes['DevUpdate']>, ParentType, ContextType, RequireFields<MutationPublishUpdateArgs, 'update'>>;
   deleteUpdate?: Resolver<ResolversTypes['Boolean'], ParentType, ContextType, RequireFields<MutationDeleteUpdateArgs, 'id'>>;
   editUpdate?: Resolver<ResolversTypes['DevUpdate'], ParentType, ContextType, RequireFields<MutationEditUpdateArgs, 'update' | 'id'>>;
+  createArticle?: Resolver<ResolversTypes['Article'], ParentType, ContextType, RequireFields<MutationCreateArticleArgs, 'article'>>;
+  deleteArticle?: Resolver<ResolversTypes['Boolean'], ParentType, ContextType, RequireFields<MutationDeleteArticleArgs, 'id'>>;
   signup?: Resolver<ResolversTypes['User'], ParentType, ContextType, RequireFields<MutationSignupArgs, 'user'>>;
   login?: Resolver<ResolversTypes['User'], ParentType, ContextType, RequireFields<MutationLoginArgs, 'credentials'>>;
   appleLogin?: Resolver<ResolversTypes['User'], ParentType, ContextType, RequireFields<MutationAppleLoginArgs, 'email'>>;
@@ -526,6 +621,8 @@ export type QueryResolvers<ContextType = any, ParentType extends ResolversParent
   getSoundboards?: Resolver<Array<Maybe<ResolversTypes['Soundboard']>>, ParentType, ContextType>;
   getSoundboard?: Resolver<ResolversTypes['Soundboard'], ParentType, ContextType, RequireFields<QueryGetSoundboardArgs, 'soundboardId'>>;
   getLatestUpdate?: Resolver<Maybe<ResolversTypes['DevUpdate']>, ParentType, ContextType>;
+  getArticle?: Resolver<ResolversTypes['Article'], ParentType, ContextType, RequireFields<QueryGetArticleArgs, 'id'>>;
+  getArticles?: Resolver<Array<Maybe<ResolversTypes['Article']>>, ParentType, ContextType, RequireFields<QueryGetArticlesArgs, 'params'>>;
   getUser?: Resolver<ResolversTypes['User'], ParentType, ContextType, RequireFields<QueryGetUserArgs, 'id'>>;
 };
 
@@ -555,6 +652,8 @@ export type UserResolvers<ContextType = any, ParentType extends ResolversParentT
 };
 
 export type Resolvers<ContextType = any> = {
+  Article?: ArticleResolvers<ContextType>;
+  ArticleContent?: ArticleContentResolvers<ContextType>;
   Character?: CharacterResolvers<ContextType>;
   DevUpdate?: DevUpdateResolvers<ContextType>;
   Inventory?: InventoryResolvers<ContextType>;
