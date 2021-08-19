@@ -304,6 +304,7 @@ interface PasswordResetInput {
 interface Query {
   __typename?: 'Query';
   getCharacter: Character;
+  getCharacters: Array<Maybe<Character>>;
   getInventory: Inventory;
   getSoundboards: Array<Maybe<Soundboard>>;
   getSoundboard: Soundboard;
@@ -316,6 +317,11 @@ interface Query {
 
 interface QueryGetCharacterArgs {
   id: Scalars['Int'];
+}
+
+
+interface QueryGetCharactersArgs {
+  userId: Scalars['Int'];
 }
 
 

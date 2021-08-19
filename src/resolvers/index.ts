@@ -25,6 +25,7 @@ import { getUser } from './query/user/getUser';
 import { updateUser } from './mutation/user/updateUser';
 import { getArticle, getArticles } from './query/system/article';
 import { createArticle, deleteArticle } from './mutation/system/article';
+import { getCharacters } from './query/character/getCharacters';
 
 export const resolvers: Resolvers.Resolvers = {
 	Query: <Resolvers.QueryResolvers>{
@@ -35,7 +36,8 @@ export const resolvers: Resolvers.Resolvers = {
 		getInventory: getInventory,
 		getLatestUpdate: getLatestUpdate,
 		getArticle: getArticle,
-		getArticles: getArticles
+		getArticles: getArticles,
+		getCharacters
 	},
 	Soundboard: SoundboardResolvers,
 	Mutation: <Resolvers.MutationResolvers>{

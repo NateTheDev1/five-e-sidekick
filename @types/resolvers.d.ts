@@ -307,6 +307,7 @@ interface PasswordResetInput {
 interface Query {
   __typename?: 'Query';
   getCharacter: Character;
+  getCharacters: Array<Maybe<Character>>;
   getInventory: Inventory;
   getSoundboards: Array<Maybe<Soundboard>>;
   getSoundboard: Soundboard;
@@ -319,6 +320,11 @@ interface Query {
 
 interface QueryGetCharacterArgs {
   id: Scalars['Int'];
+}
+
+
+interface QueryGetCharactersArgs {
+  userId: Scalars['Int'];
 }
 
 
@@ -617,6 +623,7 @@ export type MutationResolvers<ContextType = any, ParentType extends ResolversPar
 
 export type QueryResolvers<ContextType = any, ParentType extends ResolversParentTypes['Query'] = ResolversParentTypes['Query']> = {
   getCharacter?: Resolver<ResolversTypes['Character'], ParentType, ContextType, RequireFields<QueryGetCharacterArgs, 'id'>>;
+  getCharacters?: Resolver<Array<Maybe<ResolversTypes['Character']>>, ParentType, ContextType, RequireFields<QueryGetCharactersArgs, 'userId'>>;
   getInventory?: Resolver<ResolversTypes['Inventory'], ParentType, ContextType, RequireFields<QueryGetInventoryArgs, 'characterId'>>;
   getSoundboards?: Resolver<Array<Maybe<ResolversTypes['Soundboard']>>, ParentType, ContextType>;
   getSoundboard?: Resolver<ResolversTypes['Soundboard'], ParentType, ContextType, RequireFields<QueryGetSoundboardArgs, 'soundboardId'>>;
